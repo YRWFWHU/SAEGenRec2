@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(conda info)",
+      "Bash(conda env list)",
+      "Bash(conda run -n saegenrec python --version)",
+      "Bash(conda run -n saegenrec pip list)",
+      "Bash(nvcc --version)",
+      "Bash(conda run -n saegenrec python -c \"import torch; print\\(''torch:'', torch.__version__\\); print\\(''CUDA available:'', torch.cuda.is_available\\(\\)\\); print\\(''CUDA version:'', torch.version.cuda\\)\")",
+      "Bash(conda run -n saegenrec conda search -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ faiss-gpu)",
+      "Bash(conda install -n saegenrec -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ faiss-gpu=1.9.0 --no-deps -y)",
+      "Bash(conda run -n saegenrec python -c \"import faiss; print\\(''faiss version:'', faiss.__version__\\); print\\(''GPU res:'', faiss.StandardGpuResources\\(\\)\\)\")",
+      "Bash(conda install -n saegenrec -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ faiss-gpu=1.9.0 -y)",
+      "Bash(conda list -n saegenrec)",
+      "Bash(conda search -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ \"faiss-cpu=1.9.0\")",
+      "Bash(conda install -n saegenrec -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ faiss-cpu=1.9.0 -y)"
+    ]
+  }
+}
