@@ -26,14 +26,6 @@ def _encode_all(
     return torch.cat(all_acts, dim=0)
 
 
-def _build_sids(topk_indices: torch.Tensor, k: int) -> list[list[int]]:
-    """从 top-k 索引构建 SID 列表（每个 item 一个 k 元素列表）。"""
-    return topk_indices[:, :k].tolist()
-
-
-def _sids_to_str(sids: list[list[int]]) -> list[str]:
-    return [str(sid) for sid in sids]
-
 
 def generate_sae_indices(
     checkpoint: str = "",
@@ -58,11 +50,10 @@ def generate_sae_indices(
     Returns:
         output_path
     """
-    dev_str = device if torch.cuda.is_available() else "cpu"
-    dev = torch.device(dev_str)
+    dev = torch.device(device if torch.cuda.is_available() else "cpu")
 
     # 加载 GatedSAE（推理模型）
-    sae = SAE.load_from_disk(checkpoint, device=dev_str)
+    sae = SAE.load_from_disk(checkpoint, device=str(dev))
     sae.eval()
     logger.info(f"Loaded GatedSAE from {checkpoint}: d_in={sae.cfg.d_in}, d_sae={sae.cfg.d_sae}")
 
@@ -79,7 +70,7 @@ def generate_sae_indices(
     # 预计算 top-(K + max_dedup_iters) 以便去重时有备用特征
     extra = max_dedup_iters
     fetch_k = min(k + extra, sae.cfg.d_sae)
-    topk_values, topk_indices = torch.topk(feature_acts, k=fetch_k, dim=1)
+    _, topk_indices = torch.topk(feature_acts, k=fetch_k, dim=1)
     # topk_indices: (n_items, fetch_k)
 
     # 处理 K > 非零激活数的情况：用 0 填充（实际上 topk 会返回 0 值对应的索引，已足够）
@@ -91,10 +82,7 @@ def generate_sae_indices(
         # 检测碰撞
         sid_to_items: dict[str, list[int]] = {}
         for item_id, sid in enumerate(item_sids):
-            key = str(sid)
-            if key not in sid_to_items:
-                sid_to_items[key] = []
-            sid_to_items[key].append(item_id)
+            sid_to_items.setdefault(str(sid), []).append(item_id)
 
         collision_groups = [g for g in sid_to_items.values() if len(g) > 1]
         if not collision_groups:
@@ -115,16 +103,12 @@ def generate_sae_indices(
             break
 
         for group in collision_groups:
-            # 保留第一个 item，对其余 item 替换最后一个位置
+            # 保留第一个 item，对其余 item 原地替换最后一个位置
             for item_id in group[1:]:
-                new_last = int(topk_indices[item_id, candidate_col].item())
-                new_sid = item_sids[item_id].copy()
-                new_sid[-1] = new_last
-                item_sids[item_id] = new_sid
+                item_sids[item_id][-1] = int(topk_indices[item_id, candidate_col].item())
 
     # 最终碰撞统计
-    final_strs = _sids_to_str(item_sids)
-    n_unique = len(set(final_strs))
+    n_unique = len({str(sid) for sid in item_sids})
     collision_rate = (n_items - n_unique) / n_items
     logger.info(
         f"Final: {n_items} items, {n_unique} unique SIDs, collision_rate={collision_rate:.4f}"

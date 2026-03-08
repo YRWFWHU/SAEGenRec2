@@ -47,6 +47,10 @@ class NpyDataProvider(Iterator[torch.Tensor]):
         self._pos = end
         return self._data[batch_idx]
 
+    @property
+    def d_in(self) -> int:
+        return self._data.shape[1]
+
     def __len__(self) -> int:
         return self._n
 
@@ -84,15 +88,11 @@ def gated_sae_train(
     """
     set_seed(seed)
 
-    # 自动检测 d_in
-    raw = np.load(embedding_path)
-    d_in = raw.shape[-1]
-    d_sae = d_in * expansion_factor
-    logger.info(f"Embedding shape: {raw.shape}, d_in={d_in}, d_sae={d_sae}")
-    del raw
-
-    # 创建 DataProvider
+    # 创建 DataProvider（自动检测 d_in，避免二次读文件）
     data_provider = NpyDataProvider(embedding_path, batch_size=train_batch_size, seed=seed)
+    d_in = data_provider.d_in
+    d_sae = d_in * expansion_factor
+    logger.info(f"Embeddings: n={len(data_provider)}, d_in={d_in}, d_sae={d_sae}")
 
     # 创建 GatedTrainingSAE
     dev = device if torch.cuda.is_available() else "cpu"

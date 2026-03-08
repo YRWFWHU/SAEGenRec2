@@ -136,7 +136,7 @@ class TestSIDFormat:
 
         for token in loaded["0"]:
             assert token.startswith("[f_"), f"Token {token} should use [f_*] prefix"
-            assert not re.match(r"\[[a-e|g-z]_", token), f"Token {token} must not have position prefix"
+            assert not re.match(r"\[[a-eg-z]_", token), f"Token {token} must not have position prefix"
 
     def test_feature_index_range(self):
         """feature_index 应在 [0, d_sae-1] 范围内。"""
