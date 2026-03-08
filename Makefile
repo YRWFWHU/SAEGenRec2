@@ -61,6 +61,102 @@ create_environment:
 # PROJECT RULES                                                                 #
 #################################################################################
 
+# Pipeline configuration — override via: make preprocess CATEGORY=Beauty DATA_DIR=data/raw
+CATEGORY ?= Beauty
+DATA_DIR ?= data
+OUTPUT_DIR ?= data/processed
+MODEL_PATH ?= models/sft
+RL_MODEL_PATH ?= models/rl
+SASREC_MODEL_PATH ?= models/sasrec
+TRAIN_CSV ?= $(OUTPUT_DIR)/$(CATEGORY).train.csv
+VALID_CSV ?= $(OUTPUT_DIR)/$(CATEGORY).valid.csv
+TEST_CSV ?= $(OUTPUT_DIR)/$(CATEGORY).test.csv
+INFO_FILE ?= $(OUTPUT_DIR)/info/$(CATEGORY).txt
+EMB_DIR ?= $(OUTPUT_DIR)/emb
+INDEX_FILE ?= $(OUTPUT_DIR)/$(CATEGORY).index.json
+RESULTS_DIR ?= results
+
+## Preprocess raw Amazon review data (k-core filter + TO/LOO split)
+.PHONY: preprocess
+preprocess:
+	$(PYTHON_INTERPRETER) -m SAEGenRec.data_process preprocess \
+		--data_dir=$(DATA_DIR)/raw \
+		--output_dir=$(OUTPUT_DIR) \
+		--category=$(CATEGORY)
+
+## Generate text embeddings with sentence-transformers
+.PHONY: embed
+embed:
+	$(PYTHON_INTERPRETER) -m SAEGenRec.sid_builder text2emb \
+		--dataset=$(CATEGORY) \
+		--data_dir=$(OUTPUT_DIR) \
+		--output_dir=$(EMB_DIR)
+
+## Build semantic IDs via RQ-VAE training
+.PHONY: build_sid
+build_sid:
+	$(PYTHON_INTERPRETER) -m SAEGenRec.sid_builder rqvae_train \
+		--dataset=$(CATEGORY) \
+		--emb_dir=$(EMB_DIR) \
+		--output_dir=$(OUTPUT_DIR)
+	$(PYTHON_INTERPRETER) -m SAEGenRec.sid_builder generate_indices \
+		--dataset=$(CATEGORY) \
+		--emb_dir=$(EMB_DIR) \
+		--checkpoint_dir=$(OUTPUT_DIR) \
+		--output_dir=$(OUTPUT_DIR)
+
+## Convert inter files to CSV + info TXT
+.PHONY: convert
+convert:
+	$(PYTHON_INTERPRETER) -m SAEGenRec.data_process convert_dataset \
+		--dataset=$(CATEGORY) \
+		--data_dir=$(OUTPUT_DIR) \
+		--index_file=$(INDEX_FILE) \
+		--output_dir=$(OUTPUT_DIR)
+
+## Run SFT training
+.PHONY: sft
+sft:
+	$(PYTHON_INTERPRETER) -m SAEGenRec.training sft \
+		--model_path=$(MODEL_PATH) \
+		--train_csv=$(TRAIN_CSV) \
+		--eval_csv=$(VALID_CSV) \
+		--info_file=$(INFO_FILE) \
+		--category=$(CATEGORY)
+
+## Run RL (GRPO) training
+.PHONY: rl
+rl:
+	$(PYTHON_INTERPRETER) -m SAEGenRec.training rl \
+		--model_path=$(MODEL_PATH) \
+		--train_csv=$(TRAIN_CSV) \
+		--eval_csv=$(VALID_CSV) \
+		--info_file=$(INFO_FILE) \
+		--category=$(CATEGORY) \
+		--output_dir=$(RL_MODEL_PATH)
+
+## Evaluate model with constrained beam search
+.PHONY: evaluate
+evaluate:
+	$(PYTHON_INTERPRETER) -m SAEGenRec.evaluation evaluate \
+		--model_path=$(RL_MODEL_PATH) \
+		--test_csv=$(TEST_CSV) \
+		--info_file=$(INFO_FILE) \
+		--category=$(CATEGORY) \
+		--output_dir=$(RESULTS_DIR)
+
+## Train SASRec CF model
+.PHONY: sasrec
+sasrec:
+	$(PYTHON_INTERPRETER) -m SAEGenRec.models sasrec_train \
+		--train_csv=$(TRAIN_CSV) \
+		--valid_csv=$(VALID_CSV) \
+		--test_csv=$(TEST_CSV) \
+		--output_dir=$(SASREC_MODEL_PATH)
+
+## Run full pipeline end-to-end (preprocess → embed → build_sid → convert → sft → rl → evaluate)
+.PHONY: pipeline
+pipeline: preprocess embed build_sid convert sft rl evaluate
 
 
 #################################################################################

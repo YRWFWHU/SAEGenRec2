@@ -28,6 +28,15 @@ dependencies = [
     "python-dotenv",
     "ruff",
     "scikit-learn",
+    "torch",
+    "transformers",
+    "trl",
+    "deepspeed",
+    "faiss-cpu",
+    "fire",
+    "loguru",
+    "sentence-transformers",
+    "tqdm",
 ]
 requires-python = "~=3.12.0"
 
