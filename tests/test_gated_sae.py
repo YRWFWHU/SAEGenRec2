@@ -93,18 +93,20 @@ class TestNpyDataProvider:
 
 class TestSIDFormat:
     def _make_index_json(self, n_items: int, k: int, d_sae: int) -> dict:
-        """构造 fake index_dict（与 generate_sae_indices 相同格式）。"""
-        prefix_list = list("abcdefghijklmnopqrstuvwxyz")
+        """构造 fake index_dict（与 generate_sae_indices 相同格式）。
+
+        GatedSAE 使用统一前缀 [f_*]：所有特征来自同一 codebook，
+        与 RQ-VAE 的位置前缀 [a_*][b_*][c_*]（不同 codebook）不同。
+        """
         index_dict = {}
         for item_id in range(n_items):
-            # 随机 K 个不重复的特征索引
             feat_indices = np.random.choice(d_sae, size=k, replace=False).tolist()
-            tokens = [f"[{prefix_list[pos]}_{idx}]" for pos, idx in enumerate(feat_indices)]
+            tokens = [f"[f_{idx}]" for idx in feat_indices]
             index_dict[str(item_id)] = tokens
         return index_dict
 
     def test_output_structure(self, tmp_path):
-        """验证 .index.json 结构：每个 item 有 K=8 个 token，格式正确。"""
+        """验证 .index.json 结构：每个 item 有 K=8 个 token，格式为 [f_*]。"""
         n_items, k, d_sae = 20, 8, 64
         index_dict = self._make_index_json(n_items, k, d_sae)
 
@@ -118,15 +120,13 @@ class TestSIDFormat:
         assert len(loaded) == n_items
         for item_id, tokens in loaded.items():
             assert len(tokens) == k, f"Item {item_id} should have {k} tokens"
-            for pos, token in enumerate(tokens):
-                prefix = chr(97 + pos)
-                assert re.match(rf"\[{prefix}_\d+\]", token), f"Token {token} format invalid"
+            for token in tokens:
+                assert re.match(r"\[f_\d+\]", token), f"Token {token} format invalid"
 
-    def test_prefix_letters_a_to_h(self, tmp_path):
-        """K=8 时 prefix 字母应为 a-h。"""
+    def test_uniform_prefix_f(self, tmp_path):
+        """GatedSAE 所有 token 应使用统一前缀 [f_*]，不含位置前缀 a-h。"""
         k = 8
-        prefix_list = list("abcdefghijklmnopqrstuvwxyz")
-        index_dict = {"0": [f"[{prefix_list[pos]}_42]" for pos in range(k)]}
+        index_dict = {"0": [f"[f_{42 + i}]" for i in range(k)]}
         path = str(tmp_path / "test.index.json")
         with open(path, "w") as f:
             json.dump(index_dict, f)
@@ -134,21 +134,20 @@ class TestSIDFormat:
         with open(path) as f:
             loaded = json.load(f)
 
-        tokens = loaded["0"]
-        for pos, token in enumerate(tokens):
-            expected_prefix = chr(97 + pos)
-            assert token.startswith(f"[{expected_prefix}_")
+        for token in loaded["0"]:
+            assert token.startswith("[f_"), f"Token {token} should use [f_*] prefix"
+            assert not re.match(r"\[[a-e|g-z]_", token), f"Token {token} must not have position prefix"
 
     def test_feature_index_range(self):
         """feature_index 应在 [0, d_sae-1] 范围内。"""
         d_sae = 64
         index_dict = self._make_index_json(n_items=10, k=8, d_sae=d_sae)
-        pattern = re.compile(r"\[([a-z])_(\d+)\]")
+        pattern = re.compile(r"\[f_(\d+)\]")
         for tokens in index_dict.values():
             for token in tokens:
                 m = pattern.match(token)
-                assert m is not None
-                feat_idx = int(m.group(2))
+                assert m is not None, f"Token {token} does not match [f_*] format"
+                feat_idx = int(m.group(1))
                 assert 0 <= feat_idx < d_sae
 
     def test_dedup_produces_unique_sids(self, tmp_path):

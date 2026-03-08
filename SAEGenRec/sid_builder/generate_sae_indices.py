@@ -87,8 +87,6 @@ def generate_sae_indices(
     item_sids: list[list[int]] = topk_indices[:, :k].tolist()
 
     # ——— SID 去重 ———
-    prefix_list = list("abcdefghijklmnopqrstuvwxyz")
-
     for iteration in range(max_dedup_iters):
         # 检测碰撞
         sid_to_items: dict[str, list[int]] = {}
@@ -137,10 +135,12 @@ def generate_sae_indices(
             "Consider increasing max_dedup_iters or expansion_factor."
         )
 
-    # 转换为 token 字符串格式：[{prefix}_{feature_index}]
+    # 转换为 token 字符串格式：[f_{feature_index}]
+    # GatedSAE 所有特征来自同一 codebook，使用统一前缀 "f"（feature），
+    # 与 RQ-VAE 的位置感知前缀（a/b/c 对应不同 codebook）区别开来。
     index_dict: dict[str, list[str]] = {}
     for item_id, sid in enumerate(item_sids):
-        tokens = [f"[{prefix_list[pos]}_{feat_idx}]" for pos, feat_idx in enumerate(sid)]
+        tokens = [f"[f_{feat_idx}]" for feat_idx in sid]
         index_dict[str(item_id)] = tokens
 
     # 保存 .index.json
