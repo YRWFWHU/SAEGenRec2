@@ -1,7 +1,7 @@
 """集中配置模块：CATEGORY_MAP、set_seed()、各阶段 dataclass 配置。"""
 
-import random
 from dataclasses import dataclass, field
+import random
 from typing import List, Optional
 
 import numpy as np
@@ -191,6 +191,24 @@ class EvalConfig(BaseConfig):
     max_new_tokens: int = 256
     length_penalty: float = 0.0
     k_values: List[int] = field(default_factory=lambda: [1, 3, 5, 10, 20])
+
+
+@dataclass
+class GatedSAEConfig(BaseConfig):
+    """GatedSAE 训练和 SID 生成配置。"""
+
+    embedding_path: str = ""
+    d_in: int = 384
+    expansion_factor: int = 4
+    k: int = 8
+    l1_coefficient: float = 1.0
+    lr: float = 3e-4
+    total_training_samples: int = 1_000_000
+    train_batch_size: int = 4096
+    output_dir: str = "models/gated_sae"
+    device: str = "cuda:0"
+    seed: int = 42
+    max_dedup_iters: int = 20
 
 
 @dataclass

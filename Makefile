@@ -105,6 +105,19 @@ build_sid:
 		--checkpoint_dir=$(OUTPUT_DIR) \
 		--output_dir=$(OUTPUT_DIR)
 
+## Build semantic IDs via GatedSAE training
+SAE_MODEL_DIR ?= models/gated_sae/$(CATEGORY)
+SAE_EMB_PATH ?= data/interim/$(CATEGORY).emb-all-MiniLM-L6-v2-td.npy
+.PHONY: build_sae_sid
+build_sae_sid:
+	$(PYTHON_INTERPRETER) -m SAEGenRec.sid_builder gated_sae_train \
+		--embedding_path=$(SAE_EMB_PATH) \
+		--output_dir=$(SAE_MODEL_DIR)
+	$(PYTHON_INTERPRETER) -m SAEGenRec.sid_builder generate_sae_indices \
+		--checkpoint=$(SAE_MODEL_DIR) \
+		--embedding_path=$(SAE_EMB_PATH) \
+		--output_path=$(INDEX_FILE)
+
 ## Convert inter files to CSV + info TXT
 .PHONY: convert
 convert:
