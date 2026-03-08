@@ -1,9 +1,10 @@
-"""RL reward 函数：rule、ranking、semantic、sasrec。
+"""RL reward 函数：rule、prefix、ranking、semantic、sasrec。
 
 Ported from references/MiniOneRec/rl.py reward functions.
 """
 
 import math
+import re
 from typing import Dict, List, Optional
 
 import numpy as np
@@ -31,6 +32,48 @@ def rule_reward(
     for pred in predictions:
         pred = pred.strip().strip('"').strip("\n")
         rewards.append(1.0 if pred == target else 0.0)
+    return rewards
+
+
+def prefix_reward(
+    predictions: List[str],
+    target: str,
+    item_dict: Optional[Dict[str, List[int]]] = None,
+    **kwargs,
+) -> List[float]:
+    """Prefix reward：对 SID 各分量前缀匹配给予部分奖励，引入 reward 方差。
+
+    SID 格式 [a_x][b_y][c_z]，按分量匹配：
+    - 完全匹配：1.0
+    - 前两分量匹配：0.5
+    - 仅第一分量匹配：0.2
+    - 不匹配：0.0
+
+    与 rule_reward 相比，partial match 可产生组内 reward 方差，
+    使 GRPO 在精确匹配难以实现时也能获得学习信号。
+    """
+    _BRACKET = re.compile(r'\[[^\]]+\]')
+
+    target_clean = target.strip().strip('"').strip("\n")
+    target_parts = _BRACKET.findall(target_clean)
+    n = len(target_parts)
+
+    rewards = []
+    for pred in predictions:
+        pred_clean = pred.strip().strip('"').strip("\n")
+        if pred_clean == target_clean:
+            rewards.append(1.0)
+            continue
+        pred_parts = _BRACKET.findall(pred_clean)
+        matches = sum(1 for a, b in zip(target_parts, pred_parts) if a == b)
+        if n == 0 or matches == 0:
+            rewards.append(0.0)
+        elif matches == n - 1:
+            rewards.append(0.5)
+        elif matches >= 1:
+            rewards.append(0.2)
+        else:
+            rewards.append(0.0)
     return rewards
 
 

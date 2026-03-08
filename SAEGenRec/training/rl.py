@@ -18,6 +18,7 @@ from SAEGenRec.config import CATEGORY_MAP
 from SAEGenRec.datasets.rl_datasets import RLSeqTitle2SidDataset, RLTitle2SidDataset, SidDataset
 from SAEGenRec.evaluation.logit_processor import build_prefix_tree
 from SAEGenRec.training.rewards import (
+    prefix_reward,
     ranking_reward,
     rule_reward,
     sasrec_reward,
@@ -146,6 +147,7 @@ def rl(
     # Select reward function
     reward_funcs = {
         "rule": rule_reward,
+        "prefix": prefix_reward,
         "ranking": ranking_reward,
         "semantic": semantic_reward,
         "sasrec": sasrec_reward,
@@ -154,8 +156,9 @@ def rl(
 
     def compute_rewards(prompts, completions, **kwargs):
         rewards = []
-        for prompt, completion in zip(prompts, completions):
-            target = kwargs.get("target", "")
+        targets = kwargs.get("target", [""] * len(completions))
+        for i, completion in enumerate(completions):
+            target = targets[i] if isinstance(targets, (list, tuple)) else targets
             r = reward_fn([completion], target)[0]
             rewards.append(r)
         return rewards

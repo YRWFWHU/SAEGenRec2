@@ -63,7 +63,7 @@ class SidDataset(CSVBaseDataset):
         prompt = self.generate_prompt(history)
         self.prompt2history[prompt] = history["history_str"]
         self.history2target[history["history_str"]] = target_item
-        return {"prompt": prompt, "completion": target_item}
+        return {"prompt": prompt, "completion": target_item, "target": target_item}
 
 
 class RLTitle2SidDataset(BaseDataset):
@@ -128,7 +128,7 @@ class RLTitle2SidDataset(BaseDataset):
         target_item = data_point["output"] + "\n"
         self.prompt2history[prompt] = data_point["input"]
         self.history2target[data_point["input"]] = target_item
-        return {"prompt": prompt, "completion": target_item}
+        return {"prompt": prompt, "completion": target_item, "target": target_item}
 
 
 class RLSeqTitle2SidDataset(CSVBaseDataset):
@@ -182,4 +182,4 @@ class RLSeqTitle2SidDataset(CSVBaseDataset):
         formatted_prompt = self.generate_formatted_prompt(prompt, "")
         self.prompt2history[formatted_prompt] = history_data["history_str"]
         self.history2target[history_data["history_str"]] = target
-        return {"prompt": formatted_prompt, "completion": target}
+        return {"prompt": formatted_prompt, "completion": target, "target": target}
