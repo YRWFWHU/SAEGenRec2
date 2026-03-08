@@ -94,6 +94,7 @@ python -m SAEGenRec.models sasrec_train --model_type=SASRec --train_csv=...
 make preprocess CATEGORY=Beauty
 make embed CATEGORY=Beauty
 make build_sid CATEGORY=Beauty
+make build_sae_sid CATEGORY=Beauty   # GatedSAE 替代方案
 make convert CATEGORY=Beauty
 make sft MODEL_PATH=models/llm
 make rl MODEL_PATH=models/sft
@@ -139,7 +140,10 @@ raw Amazon JSON → preprocess → .inter + .item.json + .review.json
 
 ## Active Technologies
 - Python 3.12 + PyTorch, HuggingFace Transformers, TRL (GRPO), DeepSpeed, FAISS, fire, loguru, sentence-transformers (001-modularize-framework)
+- SAELens v6.37.6 (GatedTrainingSAE, SAETrainer, SAE.load_from_disk) (002-gated-sae-sid)
 - 文件系统（TSV `.inter`, JSON `.item.json`/`.review.json`/`.index.json`, NPY `.npy`, CSV, TXT） (001-modularize-framework)
+- Python 3.12 + SAELens (sae-lens), PyTorch, NumPy, loguru, fire (002-gated-sae-sid)
+- .npy（输入 embedding）、safetensors + JSON（GatedSAE checkpoint）、JSON（.index.json 输出） (002-gated-sae-sid)
 
 ## Recent Changes
 - 001-modularize-framework: Added Python 3.12 + PyTorch, HuggingFace Transformers, TRL (GRPO), DeepSpeed, FAISS, fire, loguru, sentence-transformers

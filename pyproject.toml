@@ -37,6 +37,7 @@ dependencies = [
     "loguru",
     "sentence-transformers",
     "tqdm",
+    "sae-lens",
 ]
 requires-python = "~=3.12.0"
 
