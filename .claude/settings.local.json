@@ -13,7 +13,9 @@
       "Bash(conda install -n saegenrec -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ faiss-gpu=1.9.0 -y)",
       "Bash(conda list -n saegenrec)",
       "Bash(conda search -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ \"faiss-cpu=1.9.0\")",
-      "Bash(conda install -n saegenrec -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ faiss-cpu=1.9.0 -y)"
-    ]
+      "Bash(conda install -n saegenrec -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ faiss-cpu=1.9.0 -y)",
+      "Bash(.specify/scripts/bash/check-prerequisites.sh --json --require-tasks --include-tasks)"
+    ],
+    "defaultMode": "bypassPermissions"
   }
 }
