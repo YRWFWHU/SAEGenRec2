@@ -172,3 +172,40 @@ def gated_sae_train(
     logger.info(f"Saved training config: {training_config_path}")
 
     return output_dir
+
+
+# ---- SIDMethod adapter ----
+
+from SAEGenRec.sid_builder.base import SIDMethod
+from SAEGenRec.sid_builder.registry import register_sid_method
+
+
+@register_sid_method("gated_sae")
+class GatedSAEMethod(SIDMethod):
+    """GatedSAE SID 生成方法适配器。"""
+
+    name = "gated_sae"
+    default_k = 8
+    token_format = "auto"  # 使用统一前缀 f
+
+    def train(self, embedding_path: str, output_dir: str = "models/gated_sae", **config) -> str:
+        return gated_sae_train(
+            embedding_path=embedding_path, output_dir=output_dir, **config
+        )
+
+    def generate(
+        self,
+        checkpoint: str,
+        embedding_path: str,
+        output_path: str,
+        k: int = None,
+        token_format: str = "auto",
+    ) -> str:
+        from SAEGenRec.sid_builder.generate_sae_indices import generate_sae_indices
+
+        return generate_sae_indices(
+            checkpoint=checkpoint,
+            embedding_path=embedding_path,
+            output_path=output_path,
+            token_format=token_format,
+        )

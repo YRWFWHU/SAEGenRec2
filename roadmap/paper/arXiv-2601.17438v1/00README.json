@@ -1,0 +1,25 @@
+{
+   "sources" : [
+      {
+         "usage" : "toplevel",
+         "filename" : "0_main.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "0_main.bbl"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "8_ref.bib"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "ACM-Reference-Format.bst"
+      }
+   ],
+   "spec_version" : 1,
+   "texlive_version" : "2025",
+   "process" : {
+      "compiler" : "pdflatex"
+   }
+}

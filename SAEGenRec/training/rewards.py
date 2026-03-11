@@ -5,12 +5,89 @@ Ported from references/MiniOneRec/rl.py reward functions.
 
 import math
 import re
-from typing import Dict, List, Optional
+from typing import Callable, Dict, List, Optional
 
+from loguru import logger
 import numpy as np
 import torch
 
+# ---- Reward Registry ----
 
+_REWARD_REGISTRY: Dict[str, Callable] = {}
+
+
+def register_reward(name: str):
+    """注册 reward 函数的装饰器。"""
+    def decorator(fn: Callable) -> Callable:
+        _REWARD_REGISTRY[name] = fn
+        return fn
+    return decorator
+
+
+def get_reward_fn(name: str) -> Callable:
+    """通过名称获取 reward 函数，包装异常处理。"""
+    if name not in _REWARD_REGISTRY:
+        available = list(_REWARD_REGISTRY.keys())
+        raise ValueError(f"Unknown reward: '{name}'. Available: {available}")
+    raw_fn = _REWARD_REGISTRY[name]
+
+    def safe_fn(predictions, target, **kwargs):
+        try:
+            return raw_fn(predictions, target, **kwargs)
+        except Exception as e:
+            logger.warning(f"Reward '{name}' raised exception: {e}. Returning zeros.")
+            return [0.0] * len(predictions)
+
+    return safe_fn
+
+
+def list_rewards() -> Dict[str, str]:
+    """列出所有已注册的 reward 函数及其文档字符串。"""
+    return {name: (fn.__doc__ or "").split("\n")[0].strip() for name, fn in _REWARD_REGISTRY.items()}
+
+
+class CombinedReward:
+    """组合多个 reward 函数，按权重加权求和。"""
+
+    def __init__(self, names: List[str], weights: List[float]):
+        assert len(names) == len(weights), "names 和 weights 数量不匹配"
+        self._fns = [get_reward_fn(n) for n in names]
+        total = sum(weights)
+        self._weights = [w / total for w in weights]  # normalize
+
+    def __call__(self, predictions: List[str], target: str, **kwargs) -> List[float]:
+        n = len(predictions)
+        result = [0.0] * n
+        for fn, w in zip(self._fns, self._weights):
+            rewards = fn(predictions, target, **kwargs)
+            for i, r in enumerate(rewards):
+                result[i] += w * r
+        return result
+
+
+def parse_reward_type(reward_type: str, reward_weights: str) -> Callable:
+    """解析 reward_type 字符串（支持 '+' 组合语法）。
+
+    Args:
+        reward_type: 如 'rule' 或 'rule+prefix'
+        reward_weights: 如 '' 或 '0.7,0.3'
+
+    Returns:
+        单个 reward 函数或 CombinedReward 实例
+    """
+    names = [n.strip() for n in reward_type.split("+") if n.strip()]
+    if len(names) == 1:
+        return get_reward_fn(names[0])
+    if reward_weights:
+        weights = [float(w.strip()) for w in reward_weights.split(",")]
+    else:
+        weights = [1.0 / len(names)] * len(names)
+    return CombinedReward(names=names, weights=weights)
+
+
+# ---- Builtin reward functions ----
+
+@register_reward("rule")
 def rule_reward(
     predictions: List[str],
     target: str,
@@ -35,6 +112,7 @@ def rule_reward(
     return rewards
 
 
+@register_reward("prefix")
 def prefix_reward(
     predictions: List[str],
     target: str,
@@ -77,6 +155,7 @@ def prefix_reward(
     return rewards
 
 
+@register_reward("ranking")
 def ranking_reward(
     predictions: List[str],
     target: str,
@@ -117,6 +196,7 @@ def ranking_reward(
     return rewards
 
 
+@register_reward("semantic")
 def semantic_reward(
     predictions: List[str],
     target: str,
@@ -166,6 +246,7 @@ def semantic_reward(
     return rewards
 
 
+@register_reward("sasrec")
 def sasrec_reward(
     predictions: List[str],
     target: str,

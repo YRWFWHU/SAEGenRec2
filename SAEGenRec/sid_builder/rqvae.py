@@ -264,3 +264,38 @@ def rqvae_train(
         f"Training done. best_loss={best_loss:.4f}, best_collision_rate={best_collision_rate:.6f}"
     )
     return best_collision_ckpt
+
+
+# ---- SIDMethod adapter ----
+
+from SAEGenRec.sid_builder.base import SIDMethod
+from SAEGenRec.sid_builder.registry import register_sid_method
+
+
+@register_sid_method("rqvae")
+class RQVAEMethod(SIDMethod):
+    """RQ-VAE SID 生成方法适配器。"""
+
+    name = "rqvae"
+    default_k = 3
+    token_format = "auto"  # 使用位置前缀 a/b/c/...
+
+    def train(self, embedding_path: str, output_dir: str = "models/rqvae", **config) -> str:
+        return rqvae_train(embedding_path=embedding_path, output_dir=output_dir, **config)
+
+    def generate(
+        self,
+        checkpoint: str,
+        embedding_path: str,
+        output_path: str,
+        k: int = None,
+        token_format: str = "auto",
+    ) -> str:
+        from SAEGenRec.sid_builder.generate_indices import generate_indices
+
+        return generate_indices(
+            checkpoint=checkpoint,
+            embedding_path=embedding_path,
+            output_path=output_path,
+            token_format=token_format,
+        )

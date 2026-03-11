@@ -1,0 +1,6 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+In this work, we addressed the limitations of disjoint optimization in generative recommendation by proposing UniGRec, a unified framework that jointly integrated the tokenizer and recommender. By leveraging differentiable soft identifiers, UniGRec established a direct gradient pathway, allowing the recommendation objective to supervise the tokenization process end-to-end. To tackle the challenges arising from this design, our framework employed Annealed Inference Alignment to mitigate the training–inference discrepancy, Codeword Uniformity Regularization to prevent identifier collapse, and Dual Collaborative Distillation to reinforce coarse-grained collaborative signals.
+
+For future work, we intend to explore more efficient approaches for integrating collaborative signals in a more streamlined and effective manner, given that our current framework depends on a pre-trained collaborative model and relies on two distillation losses. In addition, we aim to evaluate the scalability of UniGRec on large-scale industrial datasets~\cite{fu2025forge}, in order to further assess its robustness and efficiency when applied to extremely large item corpora.

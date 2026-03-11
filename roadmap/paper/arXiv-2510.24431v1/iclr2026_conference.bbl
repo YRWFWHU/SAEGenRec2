@@ -1,0 +1,276 @@
+\begin{thebibliography}{53}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Deng et~al.(2025)Deng, Wang, Cai, Ren, Hu, Ding, Luo, and Zhou]{OneRec}
+Jiaxin Deng, Shiyao Wang, Kuo Cai, Lejian Ren, Qigen Hu, Weifeng Ding, Qiang Luo, and Guorui Zhou.
+\newblock Onerec: Unifying retrieve and rank with generative recommender and iterative preference alignment.
+\newblock \emph{CoRR}, abs/2502.18965, 2025.
+
+\bibitem[Wang et~al.(2025)Wang, Yan, Ma, Huang, Li, Yu, Liu, Han, Jiang, Yin, Chen, Jiang, Li, Lin, Han, Du, and Jiang]{mtgr}
+Yuxiang Wang, Xiao Yan, Chi Ma, Mincong Huang, Xiaoguang Li, Lei Yu, Chuan Liu, Ruidong Han, He~Jiang, Bin Yin, Shangyu Chen, Fei Jiang, Xiang Li, Wei Lin, Haowei Han, Bo~Du, and Jiawei Jiang.
+\newblock Mtgrboost: Boosting large-scale generative recommendation models in meituan.
+\newblock \emph{CoRR}, abs/2505.12663, 2025.
+
+\bibitem[Zhai et~al.(2024)Zhai, Liao, Liu, Wang, Li, Cao, Gao, Gong, Gu, He, Lu, and Shi]{HSTU}
+Jiaqi Zhai, Lucy Liao, Xing Liu, Yueming Wang, Rui Li, Xuan Cao, Leon Gao, Zhaojie Gong, Fangda Gu, Jiayuan He, Yinghai Lu, and Yu~Shi.
+\newblock Actions speak louder than words: Trillion-parameter sequential transducers for generative recommendations.
+\newblock In \emph{Forty-first International Conference on Machine Learning, {ICML} 2024, Vienna, Austria, July 21-27, 2024}. OpenReview.net, 2024.
+
+\bibitem[Zhang et~al.(2024)Zhang, Luo, Chen, Nie, Liu, Li, Zhao, Hao, Yao, Wen, Park, Naumov, and Chen]{Wukong}
+Buyun Zhang, Liang Luo, Yuxin Chen, Jade Nie, Xi~Liu, Shen Li, Yanli Zhao, Yuchen Hao, Yantao Yao, Ellie~Dingqiao Wen, Jongsoo Park, Maxim Naumov, and Wenlin Chen.
+\newblock Wukong: Towards a scaling law for large-scale recommendation.
+\newblock In \emph{Forty-first International Conference on Machine Learning, {ICML} 2024, Vienna, Austria, July 21-27, 2024}. OpenReview.net, 2024.
+
+\bibitem[Jiang et~al.(2025)Jiang, Huang, Liu, Kong, Xu, Zhu, Xu, and Zheng]{URM}
+Junguang Jiang, Yanwen Huang, Bin Liu, Xiaoyu Kong, Ziru Xu, Han Zhu, Jian Xu, and Bo~Zheng.
+\newblock Large language models are universal recommendation learners.
+\newblock \emph{CoRR}, abs/2502.03041, 2025.
+
+\bibitem[Zhu et~al.(2025)Zhu, Fan, Zhu, Jiang, Wang, Han, Ding, Wang, Zhao, Gong, Yang, Chai, Chen, Zheng, Chen, Zhang, Zhou, Xu, Yang, Wu, and Liu]{RankMixer}
+Jie Zhu, Zhifang Fan, Xiaoxie Zhu, Yuchen Jiang, Hangyu Wang, Xintian Han, Haoran Ding, Xinmin Wang, Wenlin Zhao, Zhen Gong, Huizhi Yang, Zheng Chai, Zhe Chen, Yuchao Zheng, Qiwei Chen, Feng Zhang, Xun Zhou, Peng Xu, Xiao Yang, Di~Wu, and Zuotao Liu.
+\newblock Rankmixer: Scaling up ranking models in industrial recommenders.
+\newblock \emph{CoRR}, abs/2507.15551, 2025.
+
+\bibitem[Chen et~al.(2024{\natexlab{a}})Chen, Chi, Peng, and Yuan]{HLLM}
+Junyi Chen, Lu~Chi, Bingyue Peng, and Zehuan Yuan.
+\newblock {HLLM:} enhancing sequential recommendations via hierarchical large language models for item and user modeling.
+\newblock \emph{CoRR}, abs/2409.12740, 2024{\natexlab{a}}.
+
+\bibitem[Dai et~al.(2025)Dai, Tang, Wu, Wang, Zhu, Chen, Hong, Zhao, Fu, Wu, Ni, Zeng, Wang, Chen, Xu, and Ng]{OnePiece}
+Sunhao Dai, Jiakai Tang, Jiahua Wu, Kun Wang, Yuxuan Zhu, Bingjun Chen, Bangyang Hong, Yu~Zhao, Cong Fu, Kangle Wu, Yabo Ni, Anxiang Zeng, Wenjie Wang, Xu~Chen, Jun Xu, and See{-}Kiong Ng.
+\newblock Onepiece: Bringing context engineering and reasoning to industrial cascade ranking system.
+\newblock \emph{CoRR}, abs/2509.18091, 2025.
+
+\bibitem[Brown et~al.(2020)Brown, Mann, Ryder, Subbiah, Kaplan, Dhariwal, Neelakantan, Shyam, Sastry, Askell, Agarwal, Herbert{-}Voss, Krueger, Henighan, Child, Ramesh, Ziegler, Wu, Winter, Hesse, Chen, Sigler, Litwin, Gray, Chess, Clark, Berner, McCandlish, Radford, Sutskever, and Amodei]{GPT3}
+Tom~B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert{-}Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel~M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei.
+\newblock Language models are few-shot learners.
+\newblock In \emph{NeurIPS}, 2020.
+
+\bibitem[Achiam et~al.(2023)Achiam, Adler, Agarwal, Ahmad, Akkaya, Aleman, Almeida, Altenschmidt, Altman, Anadkat, et~al.]{gpt4}
+Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia~Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et~al.
+\newblock Gpt-4 technical report.
+\newblock \emph{arXiv preprint arXiv:2303.08774}, 2023.
+
+\bibitem[DeepSeek{-}AI et~al.(2024)DeepSeek{-}AI, Liu, Feng, Xue, Wang, Wu, Lu, Zhao, Deng, Zhang, Ruan, Dai, Guo, Yang, Chen, Ji, Li, Lin, Dai, Luo, Hao, Chen, Li, Zhang, Bao, Xu, Wang, Zhang, Ding, Xin, Gao, Li, Qu, Cai, Liang, Guo, Ni, Li, Wang, Chen, Chen, Yuan, Qiu, Li, Song, Dong, Hu, Gao, Guan, Huang, Yu, Wang, Zhang, Xu, Xia, Zhao, Wang, Zhang, Li, Wang, Zhang, Zhang, Tang, Li, Tian, Huang, Wang, Zhang, Wang, Zhu, Chen, Du, Chen, Jin, Ge, Zhang, Pan, Wang, Xu, Zhang, Chen, Li, Lu, Zhou, Chen, Wu, Ye, Ye, Ma, Wang, Zhou, Yu, Zhou, Pan, Wang, Yun, Pei, Sun, Xiao, and Zeng]{deepseek}
+DeepSeek{-}AI, Aixin Liu, Bei Feng, Bing Xue, Bingxuan Wang, Bochao Wu, Chengda Lu, Chenggang Zhao, Chengqi Deng, Chenyu Zhang, Chong Ruan, Damai Dai, Daya Guo, Dejian Yang, Deli Chen, Dongjie Ji, Erhang Li, Fangyun Lin, Fucong Dai, Fuli Luo, Guangbo Hao, Guanting Chen, Guowei Li, H.~Zhang, Han Bao, Hanwei Xu, Haocheng Wang, Haowei Zhang, Honghui Ding, Huajian Xin, Huazuo Gao, Hui Li, Hui Qu, J.~L. Cai, Jian Liang, Jianzhong Guo, Jiaqi Ni, Jiashi Li, Jiawei Wang, Jin Chen, Jingchang Chen, Jingyang Yuan, Junjie Qiu, Junlong Li, Junxiao Song, Kai Dong, Kai Hu, Kaige Gao, Kang Guan, Kexin Huang, Kuai Yu, Lean Wang, Lecong Zhang, Lei Xu, Leyi Xia, Liang Zhao, Litong Wang, Liyue Zhang, Meng Li, Miaojun Wang, Mingchuan Zhang, Minghua Zhang, Minghui Tang, Mingming Li, Ning Tian, Panpan Huang, Peiyi Wang, Peng Zhang, Qiancheng Wang, Qihao Zhu, Qinyu Chen, Qiushi Du, R.~J. Chen, R.~L. Jin, Ruiqi Ge, Ruisong Zhang, Ruizhe Pan, Runji Wang, Runxin Xu, Ruoyu Zhang, Ruyi Chen, S.~S. Li, Shanghao Lu, Shangyan Zhou,
+  Shanhuang Chen, Shaoqing Wu, Shengfeng Ye, Shengfeng Ye, Shirong Ma, Shiyu Wang, Shuang Zhou, Shuiping Yu, Shunfeng Zhou, Shuting Pan, T.~Wang, Tao Yun, Tian Pei, Tianyu Sun, W.~L. Xiao, and Wangding Zeng.
+\newblock Deepseek-v3 technical report.
+\newblock \emph{CoRR}, 2024.
+
+\bibitem[Yang et~al.(2024)Yang, Yang, Zhang, Hui, Zheng, Yu, Li, Liu, Huang, Wei, Lin, Yang, Tu, Zhang, Yang, Yang, Zhou, Lin, Dang, Lu, Bao, Yang, Yu, Li, Xue, Zhang, Zhu, Men, Lin, Li, Xia, Ren, Ren, Fan, Su, Zhang, Wan, Liu, Cui, Zhang, and Qiu]{qwen2.5}
+An~Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo~Zheng, Bowen Yu, Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, Huan Lin, Jian Yang, Jianhong Tu, Jianwei Zhang, Jianxin Yang, Jiaxi Yang, Jingren Zhou, Junyang Lin, Kai Dang, Keming Lu, Keqin Bao, Kexin Yang, Le~Yu, Mei Li, Mingfeng Xue, Pei Zhang, Qin Zhu, Rui Men, Runji Lin, Tianhao Li, Tingyu Xia, Xingzhang Ren, Xuancheng Ren, Yang Fan, Yang Su, Yichang Zhang, Yu~Wan, Yuqiong Liu, Zeyu Cui, Zhenru Zhang, and Zihan Qiu.
+\newblock Qwen2.5 technical report.
+\newblock \emph{CoRR}, 2024.
+
+\bibitem[Jiang et~al.(2023)Jiang, Sablayrolles, Mensch, Bamford, Chaplot, de~Las~Casas, Bressand, Lengyel, Lample, Saulnier, Lavaud, Lachaux, Stock, Scao, Lavril, Wang, Lacroix, and Sayed]{mistral-7b}
+Albert~Q. Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra~Singh Chaplot, Diego de~Las~Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier, L{\'{e}}lio~Renard Lavaud, Marie{-}Anne Lachaux, Pierre Stock, Teven~Le Scao, Thibaut Lavril, Thomas Wang, Timoth{\'{e}}e Lacroix, and William~El Sayed.
+\newblock Mistral 7b.
+\newblock \emph{CoRR}, abs/2310.06825, 2023.
+
+\bibitem[Dubey et~al.(2024)Dubey, Jauhri, Pandey, Kadian, Al{-}Dahle, Letman, Mathur, Schelten, Yang, Fan, Goyal, Hartshorn, Yang, Mitra, Sravankumar, Korenev, Hinsvark, Rao, Zhang, Rodriguez, Gregerson, Spataru, Rozi{\`{e}}re, Biron, Tang, Chern, Caucheteux, Nayak, Bi, Marra, McConnell, Keller, Touret, Wu, Wong, Ferrer, Nikolaidis, Allonsius, Song, Pintz, Livshits, Esiobu, Choudhary, Mahajan, Garcia{-}Olano, Perino, Hupkes, Lakomkin, AlBadawy, Lobanova, Dinan, Smith, Radenovic, Zhang, Synnaeve, Lee, Anderson, Nail, Mialon, Pang, Cucurell, Nguyen, Korevaar, Xu, Touvron, Zarov, Ibarra, Kloumann, Misra, Evtimov, Copet, Lee, Geffert, Vranes, Park, Mahadeokar, Shah, van~der Linde, Billock, Hong, Lee, Fu, Chi, Huang, Liu, Wang, Yu, Bitton, Spisak, Park, Rocca, Johnstun, Saxe, Jia, Alwala, Upasani, Plawiak, Li, Heafield, Stone, and et~al.]{llama3}
+Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al{-}Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, Anirudh Goyal, Anthony Hartshorn, Aobo Yang, Archi Mitra, Archie Sravankumar, Artem Korenev, Arthur Hinsvark, Arun Rao, Aston Zhang, Aur{\'{e}}lien Rodriguez, Austen Gregerson, Ava Spataru, Baptiste Rozi{\`{e}}re, Bethany Biron, Binh Tang, Bobbie Chern, Charlotte Caucheteux, Chaya Nayak, Chloe Bi, Chris Marra, Chris McConnell, Christian Keller, Christophe Touret, Chunyang Wu, Corinne Wong, Cristian~Canton Ferrer, Cyrus Nikolaidis, Damien Allonsius, Daniel Song, Danielle Pintz, Danny Livshits, David Esiobu, Dhruv Choudhary, Dhruv Mahajan, Diego Garcia{-}Olano, Diego Perino, Dieuwke Hupkes, Egor Lakomkin, Ehab AlBadawy, Elina Lobanova, Emily Dinan, Eric~Michael Smith, Filip Radenovic, Frank Zhang, Gabriel Synnaeve, Gabrielle Lee, Georgia~Lewis Anderson, Graeme Nail, Gr{\'{e}}goire Mialon, Guan Pang, Guillem Cucurell, Hailey Nguyen, Hannah Korevaar, Hu~Xu, Hugo
+  Touvron, Iliyan Zarov, Imanol~Arrieta Ibarra, Isabel~M. Kloumann, Ishan Misra, Ivan Evtimov, Jade Copet, Jaewon Lee, Jan Geffert, Jana Vranes, Jason Park, Jay Mahadeokar, Jeet Shah, Jelmer van~der Linde, Jennifer Billock, Jenny Hong, Jenya Lee, Jeremy Fu, Jianfeng Chi, Jianyu Huang, Jiawen Liu, Jie Wang, Jiecao Yu, Joanna Bitton, Joe Spisak, Jongsoo Park, Joseph Rocca, Joshua Johnstun, Joshua Saxe, Junteng Jia, Kalyan~Vasuden Alwala, Kartikeya Upasani, Kate Plawiak, Ke~Li, Kenneth Heafield, Kevin Stone, and et~al.
+\newblock The llama 3 herd of models.
+\newblock \emph{CoRR}, 2024.
+
+\bibitem[Touvron et~al.(2023)Touvron, Martin, Stone, Albert, Almahairi, Babaei, Bashlykov, Batra, Bhargava, Bhosale, Bikel, Blecher, Canton{-}Ferrer, Chen, Cucurull, Esiobu, Fernandes, Fu, Fu, Fuller, Gao, Goswami, Goyal, Hartshorn, Hosseini, Hou, Inan, Kardas, Kerkez, Khabsa, Kloumann, Korenev, Koura, Lachaux, Lavril, Lee, Liskovich, Lu, Mao, Martinet, Mihaylov, Mishra, Molybog, Nie, Poulton, Reizenstein, Rungta, Saladi, Schelten, Silva, Smith, Subramanian, Tan, Tang, Taylor, Williams, Kuan, Xu, Yan, Zarov, Zhang, Fan, Kambadur, Narang, Rodriguez, Stojnic, Edunov, and Scialom]{Llama2}
+Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, Dan Bikel, Lukas Blecher, Cristian Canton{-}Ferrer, Moya Chen, Guillem Cucurull, David Esiobu, Jude Fernandes, Jeremy Fu, Wenyin Fu, Brian Fuller, Cynthia Gao, Vedanuj Goswami, Naman Goyal, Anthony Hartshorn, Saghar Hosseini, Rui Hou, Hakan Inan, Marcin Kardas, Viktor Kerkez, Madian Khabsa, Isabel Kloumann, Artem Korenev, Punit~Singh Koura, Marie{-}Anne Lachaux, Thibaut Lavril, Jenya Lee, Diana Liskovich, Yinghai Lu, Yuning Mao, Xavier Martinet, Todor Mihaylov, Pushkar Mishra, Igor Molybog, Yixin Nie, Andrew Poulton, Jeremy Reizenstein, Rashi Rungta, Kalyan Saladi, Alan Schelten, Ruan Silva, Eric~Michael Smith, Ranjan Subramanian, Xiaoqing~Ellen Tan, Binh Tang, Ross Taylor, Adina Williams, Jian~Xiang Kuan, Puxin Xu, Zheng Yan, Iliyan Zarov, Yuchen Zhang, Angela Fan, Melanie Kambadur, Sharan Narang, Aur{\'{e}}lien Rodriguez, Robert Stojnic, Sergey Edunov,
+  and Thomas Scialom.
+\newblock Llama 2: Open foundation and fine-tuned chat models.
+\newblock \emph{CoRR}, abs/2307.09288, 2023.
+
+\bibitem[DeepSeek{-}AI et~al.(2025)DeepSeek{-}AI, Guo, Yang, Zhang, Song, Zhang, Xu, Zhu, Ma, Wang, Bi, Zhang, Yu, Wu, Wu, Gou, Shao, Li, Gao, Liu, Xue, Wang, Wu, Feng, Lu, Zhao, Deng, Zhang, Ruan, Dai, Chen, Ji, Li, Lin, Dai, Luo, Hao, Chen, Li, Zhang, Bao, Xu, Wang, Ding, Xin, Gao, Qu, Li, Guo, Li, Wang, Chen, Yuan, Qiu, Li, Cai, Ni, Liang, Chen, Dong, Hu, Gao, Guan, Huang, Yu, Wang, Zhang, Zhao, Wang, Zhang, Xu, Xia, Zhang, Zhang, Tang, Li, Wang, Li, Tian, Huang, Zhang, Wang, Chen, Du, Ge, Zhang, Pan, Wang, Chen, Jin, Chen, Lu, Zhou, Chen, Ye, Wang, Yu, Zhou, Pan, and Li]{Deepseek-r1}
+DeepSeek{-}AI, Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu, Shirong Ma, Peiyi Wang, Xiao Bi, Xiaokang Zhang, Xingkai Yu, Yu~Wu, Z.~F. Wu, Zhibin Gou, Zhihong Shao, Zhuoshu Li, Ziyi Gao, Aixin Liu, Bing Xue, Bingxuan Wang, Bochao Wu, Bei Feng, Chengda Lu, Chenggang Zhao, Chengqi Deng, Chenyu Zhang, Chong Ruan, Damai Dai, Deli Chen, Dongjie Ji, Erhang Li, Fangyun Lin, Fucong Dai, Fuli Luo, Guangbo Hao, Guanting Chen, Guowei Li, H.~Zhang, Han Bao, Hanwei Xu, Haocheng Wang, Honghui Ding, Huajian Xin, Huazuo Gao, Hui Qu, Hui Li, Jianzhong Guo, Jiashi Li, Jiawei Wang, Jingchang Chen, Jingyang Yuan, Junjie Qiu, Junlong Li, J.~L. Cai, Jiaqi Ni, Jian Liang, Jin Chen, Kai Dong, Kai Hu, Kaige Gao, Kang Guan, Kexin Huang, Kuai Yu, Lean Wang, Lecong Zhang, Liang Zhao, Litong Wang, Liyue Zhang, Lei Xu, Leyi Xia, Mingchuan Zhang, Minghua Zhang, Minghui Tang, Meng Li, Miaojun Wang, Mingming Li, Ning Tian, Panpan Huang, Peng Zhang, Qiancheng Wang, Qinyu Chen, Qiushi Du, Ruiqi Ge,
+  Ruisong Zhang, Ruizhe Pan, Runji Wang, R.~J. Chen, R.~L. Jin, Ruyi Chen, Shanghao Lu, Shangyan Zhou, Shanhuang Chen, Shengfeng Ye, Shiyu Wang, Shuiping Yu, Shunfeng Zhou, Shuting Pan, and S.~S. Li.
+\newblock Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning.
+\newblock \emph{CoRR}, 2025.
+
+\bibitem[Kang and McAuley(2018)]{SASRec}
+Wang{-}Cheng Kang and Julian~J. McAuley.
+\newblock Self-attentive sequential recommendation.
+\newblock In \emph{{ICDM}}, 2018.
+
+\bibitem[Hidasi et~al.(2016)Hidasi, Karatzoglou, Baltrunas, and Tikk]{GRU4Rec}
+Bal{\'{a}}zs Hidasi, Alexandros Karatzoglou, Linas Baltrunas, and Domonkos Tikk.
+\newblock Session-based recommendations with recurrent neural networks.
+\newblock In \emph{ICLR}, 2016.
+
+\bibitem[Tang and Wang(2018)]{Caser}
+Jiaxi Tang and Ke~Wang.
+\newblock Personalized top-n sequential recommendation via convolutional sequence embedding.
+\newblock In \emph{{WSDM}}, 2018.
+
+\bibitem[Wu et~al.(2021)Wu, Wang, Feng, He, Chen, Lian, and Xie]{SGL}
+Jiancan Wu, Xiang Wang, Fuli Feng, Xiangnan He, Liang Chen, Jianxun Lian, and Xing Xie.
+\newblock Self-supervised graph learning for recommendation.
+\newblock In \emph{{SIGIR} '21: The 44th International {ACM} {SIGIR} Conference on Research and Development in Information Retrieval, Virtual Event, Canada, July 11-15, 2021}. {ACM}, 2021.
+
+\bibitem[Fang et~al.(2020)Fang, Zhang, Shu, and Guo]{survey_seq}
+Hui Fang, Danning Zhang, Yiheng Shu, and Guibing Guo.
+\newblock Deep learning for sequential recommendation: Algorithms, influential factors, and evaluations.
+\newblock \emph{{ACM} Trans. Inf. Syst.}, 2020.
+
+\bibitem[Zhou et~al.(2018)Zhou, Zhu, Song, Fan, Zhu, Ma, Yan, Jin, Li, and Gai]{DIN}
+Guorui Zhou, Xiaoqiang Zhu, Chengru Song, Ying Fan, Han Zhu, Xiao Ma, Yanghui Yan, Junqi Jin, Han Li, and Kun Gai.
+\newblock Deep interest network for click-through rate prediction.
+\newblock In \emph{Proceedings of the 24th {ACM} {SIGKDD} International Conference on Knowledge Discovery {\&} Data Mining, {KDD} 2018, London, UK, August 19-23, 2018}. {ACM}, 2018.
+
+\bibitem[Covington et~al.(2016)Covington, Adams, and Sargin]{DCN}
+Paul Covington, Jay Adams, and Emre Sargin.
+\newblock Deep neural networks for youtube recommendations.
+\newblock In \emph{Proceedings of the 10th {ACM} Conference on Recommender Systems, Boston, MA, USA, September 15-19, 2016}. {ACM}, 2016.
+
+\bibitem[Wang et~al.(2021)Wang, Shivanna, Cheng, Jain, Lin, Hong, and Chi]{DCNv2}
+Ruoxi Wang, Rakesh Shivanna, Derek~Zhiyuan Cheng, Sagar Jain, Dong Lin, Lichan Hong, and Ed~H. Chi.
+\newblock {DCN} {V2:} improved deep {\&} cross network and practical lessons for web-scale learning to rank systems.
+\newblock In \emph{{WWW} '21: The Web Conference 2021, Virtual Event / Ljubljana, Slovenia, April 19-23, 2021}. {ACM} / {IW3C2}, 2021.
+
+\bibitem[Guo et~al.(2017)Guo, Tang, Ye, Li, and He]{DeepFM}
+Huifeng Guo, Ruiming Tang, Yunming Ye, Zhenguo Li, and Xiuqiang He.
+\newblock Deepfm: {A} factorization-machine based neural network for {CTR} prediction.
+\newblock In \emph{Proceedings of the Twenty-Sixth International Joint Conference on Artificial Intelligence, {IJCAI} 2017, Melbourne, Australia, August 19-25, 2017}. ijcai.org, 2017.
+
+\bibitem[Luo et~al.(2024)Luo, Cao, Sun, Yu, Huang, Yuan, Lin, Zheng, Wang, Hu, Qiu, Zhang, Zhang, Yan, Zhang, Zhang, Wen, Liu, Gai, and Zhou]{rqkmeans}
+Xinchen Luo, Jiangxia Cao, Tianyu Sun, Jinkai Yu, Rui Huang, Wei Yuan, Hezheng Lin, Yichen Zheng, Shiyao Wang, Qigen Hu, Changqing Qiu, Jiaqi Zhang, Xu~Zhang, Zhiheng Yan, Jingming Zhang, Simin Zhang, Mingxing Wen, Zhaojie Liu, Kun Gai, and Guorui Zhou.
+\newblock {QARM:} quantitative alignment multi-modal recommendation at kuaishou.
+\newblock \emph{CoRR}, abs/2411.11739, 2024.
+
+\bibitem[Zeghidour et~al.(2022)Zeghidour, Luebs, Omran, Skoglund, and Tagliasacchi]{rqvae}
+Neil Zeghidour, Alejandro Luebs, Ahmed Omran, Jan Skoglund, and Marco Tagliasacchi.
+\newblock Soundstream: An end-to-end neural audio codec.
+\newblock \emph{{IEEE} {ACM} Trans. Audio Speech Lang. Process.}, 30, 2022.
+
+\bibitem[Rajput et~al.(2023)Rajput, Mehta, Singh, Keshavan, Vu, Heldt, Hong, Tay, Tran, Samost, Kula, Chi, and Sathiamoorthy]{TIGER}
+Shashank Rajput, Nikhil Mehta, Anima Singh, Raghunandan~Hulikal Keshavan, Trung Vu, Lukasz Heldt, Lichan Hong, Yi~Tay, Vinh~Q. Tran, Jonah Samost, Maciej Kula, Ed~H. Chi, and Mahesh Sathiamoorthy.
+\newblock Recommender systems with generative retrieval.
+\newblock In \emph{Advances in Neural Information Processing Systems 36: Annual Conference on Neural Information Processing Systems 2023, NeurIPS 2023, New Orleans, LA, USA, December 10 - 16, 2023}, 2023.
+
+\bibitem[Zheng et~al.(2024)Zheng, Hou, Lu, Chen, Zhao, Chen, and Wen]{LCRec}
+Bowen Zheng, Yupeng Hou, Hongyu Lu, Yu~Chen, Wayne~Xin Zhao, Ming Chen, and Ji{-}Rong Wen.
+\newblock Adapting large language models by integrating collaborative semantics for recommendation.
+\newblock In \emph{40th {IEEE} International Conference on Data Engineering, {ICDE} 2024, Utrecht, The Netherlands, May 13-16, 2024}. {IEEE}, 2024.
+
+\bibitem[Qu et~al.(2024)Qu, Fan, Zhao, and Li]{TOKENRec}
+Haohao Qu, Wenqi Fan, Zihuai Zhao, and Qing Li.
+\newblock Tokenrec: Learning to tokenize {ID} for llm-based generative recommendation.
+\newblock \emph{CoRR}, abs/2406.10450, 2024.
+
+\bibitem[Zhou et~al.(2025{\natexlab{a}})Zhou, Deng, Zhang, Cai, Ren, Luo, Wang, Hu, Huang, Wang, Ding, Li, Luo, Wang, Cheng, Zhang, Zhang, Wang, Ma, Song, Wang, Wang, Meng, Yang, Zhang, Jiang, Zhang, Wang, Zhang, Li, Hu, Lin, Cheng, Cao, Wang, Huang, Chen, Liu, Jia, Gai, Hu, Zeng, Yu, Wang, Zhou, Wang, He, Yang, Yang, Huang, Wu, He, Gao, Yuan, Liang, Xu, Liu, Wang, Wang, Liu, Song, Zhang, Wu, Zhao, and Liu]{onerec-tech-v1}
+Guorui Zhou, Jiaxin Deng, Jinghao Zhang, Kuo Cai, Lejian Ren, Qiang Luo, Qianqian Wang, Qigen Hu, Rui Huang, Shiyao Wang, Weifeng Ding, Wuchao Li, Xinchen Luo, Xingmei Wang, Zexuan Cheng, Zixing Zhang, Bin Zhang, Boxuan Wang, Chaoyi Ma, Chengru Song, Chenhui Wang, Di~Wang, Dongxue Meng, Fan Yang, Fangyu Zhang, Feng Jiang, Fuxing Zhang, Gang Wang, Guowang Zhang, Han Li, Hengrui Hu, Hezheng Lin, Hongtao Cheng, Hongyang Cao, Huanjie Wang, Jiaming Huang, Jiapeng Chen, Jiaqiang Liu, Jinghui Jia, Kun Gai, Lantao Hu, Liang Zeng, Liao Yu, Qiang Wang, Qidong Zhou, Shengzhe Wang, Shihui He, Shuang Yang, Shujie Yang, Sui Huang, Tao Wu, Tiantian He, Tingting Gao, Wei Yuan, Xiao Liang, Xiaoxiao Xu, Xugang Liu, Yan Wang, Yi~Wang, Yiwu Liu, Yue Song, Yufei Zhang, Yunfan Wu, Yunfeng Zhao, and Zhanyu Liu.
+\newblock Onerec technical report.
+\newblock \emph{CoRR}, abs/2506.13695, 2025{\natexlab{a}}.
+
+\bibitem[Zhou et~al.(2025{\natexlab{b}})Zhou, Hu, Cheng, Wang, Deng, Zhang, Cai, Ren, Ren, Yu, Zheng, Luo, Wang, Hu, Huang, Tang, Wang, Yang, Wu, Li, Luo, Wang, Su, Wu, Cheng, Liu, Zhang, Zhang, Wang, Ma, Song, Wang, Chu, Wang, Meng, Zang, Yang, Zhang, Jiang, Zhang, Wang, Zhang, Li, Bao, Cao, Huang, Chen, Liu, Jia, Gai, Hu, Zeng, Wang, Zhou, Zhang, Wang, He, Yang, Mao, Huang, He, Gao, Yuan, Liang, Xu, Liu, Wang, Zhou, Wang, Liu, Song, Zhang, Zhao, Ling, and Li]{onerec-tech-v2}
+Guorui Zhou, Hengrui Hu, Hongtao Cheng, Huanjie Wang, Jiaxin Deng, Jinghao Zhang, Kuo Cai, Lejian Ren, Lu~Ren, Liao Yu, Pengfei Zheng, Qiang Luo, Qianqian Wang, Qigen Hu, Rui Huang, Ruiming Tang, Shiyao Wang, Shujie Yang, Tao Wu, Wuchao Li, Xinchen Luo, Xingmei Wang, Yi~Su, Yunfan Wu, Zexuan Cheng, Zhanyu Liu, Zixing Zhang, Bin Zhang, Boxuan Wang, Chaoyi Ma, Chengru Song, Chenhui Wang, Chenglong Chu, Di~Wang, Dongxue Meng, Dunju Zang, Fan Yang, Fangyu Zhang, Feng Jiang, Fuxing Zhang, Gang Wang, Guowang Zhang, Han Li, Honghui Bao, Hongyang Cao, Jiaming Huang, Jiapeng Chen, Jiaqiang Liu, Jinghui Jia, Kun Gai, Lantao Hu, Liang Zeng, Qiang Wang, Qidong Zhou, Rongzhou Zhang, Shengzhe Wang, Shihui He, Shuang Yang, Siyang Mao, Sui Huang, Tiantian He, Tingting Gao, Wei Yuan, Xiao Liang, Xiaoxiao Xu, Xugang Liu, Yan Wang, Yang Zhou, Yi~Wang, Yiwu Liu, Yue Song, Yufei Zhang, Yunfeng Zhao, Zhixin Ling, and Ziming Li.
+\newblock Onerec-v2 technical report.
+\newblock \emph{CoRR}, abs/2508.20900, 2025{\natexlab{b}}.
+
+\bibitem[Shao et~al.(2024)Shao, Wang, Zhu, Xu, Song, Zhang, Li, Wu, and Guo]{deepseekmath}
+Zhihong Shao, Peiyi Wang, Qihao Zhu, Runxin Xu, Junxiao Song, Mingchuan Zhang, Y.~K. Li, Y.~Wu, and Daya Guo.
+\newblock Deepseekmath: Pushing the limits of mathematical reasoning in open language models.
+\newblock \emph{CoRR}, 2024.
+
+\bibitem[Hou et~al.(2024)Hou, Li, He, Yan, Chen, and McAuley]{amazon}
+Yupeng Hou, Jiacheng Li, Zhankui He, An~Yan, Xiusi Chen, and Julian~J. McAuley.
+\newblock Bridging language and items for retrieval and recommendation.
+\newblock \emph{CoRR}, 2024.
+
+\bibitem[Hou et~al.(2025)Hou, Zhang, Sheng, Yang, Wang, Chua, and McAuley]{GenRec-Direction}
+Yupeng Hou, An~Zhang, Leheng Sheng, Zhengyi Yang, Xiang Wang, Tat{-}Seng Chua, and Julian~J. McAuley.
+\newblock Generative recommendation models: Progress and directions.
+\newblock In \emph{{WWW} (Companion Volume)}, pages 13--16. {ACM}, 2025.
+
+\bibitem[Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, and Polosukhin]{Transformer}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan~N. Gomez, Lukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock In \emph{{NIPS}}, 2017.
+
+\bibitem[Feng et~al.(2022)Feng, Li, Lian, Liu, and Chen]{recforest}
+Chao Feng, Wuchao Li, Defu Lian, Zheng Liu, and Enhong Chen.
+\newblock Recommender forest for efficient retrieval.
+\newblock In \emph{Advances in Neural Information Processing Systems 35: Annual Conference on Neural Information Processing Systems 2022, NeurIPS 2022, New Orleans, LA, USA, November 28 - December 9, 2022}, 2022.
+
+\bibitem[Wang et~al.(2024)Wang, Xun, Hong, Zhu, Jin, Lin, Li, Li, Xia, Zhao, and Dong]{eagar}
+Ye~Wang, Jiahao Xun, Minjie Hong, Jieming Zhu, Tao Jin, Wang Lin, Haoyuan Li, Linjun Li, Yan Xia, Zhou Zhao, and Zhenhua Dong.
+\newblock {EAGER:} two-stream generative recommender with behavior-semantic collaboration.
+\newblock In \emph{Proceedings of the 30th {ACM} {SIGKDD} Conference on Knowledge Discovery and Data Mining, {KDD} 2024, Barcelona, Spain, August 25-29, 2024}, pages 3245--3254. {ACM}, 2024.
+
+\bibitem[Kaelbling et~al.(1996)Kaelbling, Littman, and Moore]{RLsurvey}
+Leslie~Pack Kaelbling, Michael~L. Littman, and Andrew~W. Moore.
+\newblock Reinforcement learning: {A} survey.
+\newblock \emph{J. Artif. Intell. Res.}, 1996.
+
+\bibitem[Schulman et~al.(2017)Schulman, Wolski, Dhariwal, Radford, and Klimov]{PPO}
+John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov.
+\newblock Proximal policy optimization algorithms.
+\newblock \emph{CoRR}, 2017.
+
+\bibitem[Rafailov et~al.(2023)Rafailov, Sharma, Mitchell, Manning, Ermon, and Finn]{DPO}
+Rafael Rafailov, Archit Sharma, Eric Mitchell, Christopher~D. Manning, Stefano Ermon, and Chelsea Finn.
+\newblock Direct preference optimization: Your language model is secretly a reward model.
+\newblock In \emph{Advances in Neural Information Processing Systems 36: Annual Conference on Neural Information Processing Systems 2023, NeurIPS 2023, New Orleans, LA, USA, December 10 - 16, 2023}, 2023.
+
+\bibitem[Chen et~al.(2024{\natexlab{b}})Chen, Tan, Zhang, Yang, Sheng, Zhang, Wang, and Chua]{sdpo}
+Yuxin Chen, Junfei Tan, An~Zhang, Zhengyi Yang, Leheng Sheng, Enzhi Zhang, Xiang Wang, and Tat{-}Seng Chua.
+\newblock On softmax direct preference optimization for recommendation.
+\newblock In \emph{NeurIPS}, 2024{\natexlab{b}}.
+
+\bibitem[Liao et~al.(2023)Liao, Li, Yang, Wu, Yuan, and Wang]{LlaRA}
+Jiayi Liao, Sihang Li, Zhengyi Yang, Jiancan Wu, Yancheng Yuan, and Xiang Wang.
+\newblock Llara: Aligning large language models with sequential recommenders.
+\newblock \emph{CoRR}, abs/2312.02445, 2023.
+
+\bibitem[Sheng et~al.(2025)Sheng, Zhang, Zhang, Chen, Wang, and Chua]{AlphaRec}
+Leheng Sheng, An~Zhang, Yi~Zhang, Yuxin Chen, Xiang Wang, and Tat{-}Seng Chua.
+\newblock Language representations can be what recommenders need: Findings and potentials.
+\newblock In \emph{ICLR}, 2025.
+
+\bibitem[Ren et~al.(2024)Ren, Wei, Xia, Su, Cheng, Wang, Yin, and Huang]{RLMRec}
+Xubin Ren, Wei Wei, Lianghao Xia, Lixin Su, Suqi Cheng, Junfeng Wang, Dawei Yin, and Chao Huang.
+\newblock Representation learning with large language models for recommendation.
+\newblock In \emph{Proceedings of the ACM web conference 2024}, 2024.
+
+\bibitem[Yu et~al.(2025)Yu, Zhang, Zhu, Yuan, Zuo, Yue, Fan, Liu, Liu, Liu, Lin, Lin, Ma, Sheng, Tong, Zhang, Zhang, Zhang, Zhu, Zhu, Chen, Chen, Wang, Yu, Dai, Song, Wei, Zhou, Liu, Ma, Zhang, Yan, Qiao, Wu, and Wang]{DAPO}
+Qiying Yu, Zheng Zhang, Ruofei Zhu, Yufeng Yuan, Xiaochen Zuo, Yu~Yue, Tiantian Fan, Gaohong Liu, Lingjun Liu, Xin Liu, Haibin Lin, Zhiqi Lin, Bole Ma, Guangming Sheng, Yuxuan Tong, Chi Zhang, Mofan Zhang, Wang Zhang, Hang Zhu, Jinhua Zhu, Jiaze Chen, Jiangjie Chen, Chengyi Wang, Hongli Yu, Weinan Dai, Yuxuan Song, Xiangpeng Wei, Hao Zhou, Jingjing Liu, Wei{-}Ying Ma, Ya{-}Qin Zhang, Lin Yan, Mu~Qiao, Yonghui Wu, and Mingxuan Wang.
+\newblock {DAPO:} an open-source {LLM} reinforcement learning system at scale.
+\newblock \emph{CoRR}, abs/2503.14476, 2025.
+
+\bibitem[Bao et~al.(2024)Bao, Zhang, Zhang, Huo, Chen, and Feng]{D3}
+Keqin Bao, Jizhi Zhang, Yang Zhang, Xinyue Huo, Chong Chen, and Fuli Feng.
+\newblock Decoding matters: Addressing amplification bias and homogeneity issue in recommendations for large language models.
+\newblock In \emph{Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, {EMNLP} 2024, Miami, FL, USA, November 12-16, 2024}. Association for Computational Linguistics, 2024.
+
+\bibitem[Tan et~al.(2025)Tan, Chen, Zhang, Jiang, Liu, Xu, Zhu, Xu, Zheng, and Wang]{ReRe}
+Junfei Tan, Yuxin Chen, An~Zhang, Junguang Jiang, Bin Liu, Ziru Xu, Han Zhu, Jian Xu, Bo~Zheng, and Xiang Wang.
+\newblock Reinforced preference optimization for recommendation.
+\newblock \emph{arXiv preprint arXiv:2510.12211}, 2025.
+
+\bibitem[Bao et~al.(2023)Bao, Zhang, Wang, Zhang, Yang, Luo, Feng, He, and Tian]{BIGRec}
+Keqin Bao, Jizhi Zhang, Wenjie Wang, Yang Zhang, Zhengyi Yang, Yancheng Luo, Fuli Feng, Xiangnan He, and Qi~Tian.
+\newblock A bi-step grounding paradigm for large language models in recommendation systems.
+\newblock \emph{CoRR}, abs/2308.08434, 2023.
+
+\bibitem[Jin et~al.(2025)Jin, Lv, Wu, and Hamdaqa]{RLvsSFT}
+Hangzhan Jin, Sicheng Lv, Sifan Wu, and Mohammad Hamdaqa.
+\newblock Rl is neither a panacea nor a mirage: Understanding supervised vs. reinforcement learning fine-tuning for llms, 2025.
+
+\bibitem[Yue et~al.(2025)Yue, Chen, Lu, Zhao, Wang, Yue, Song, and Huang]{RLReallyLearn}
+Yang Yue, Zhiqi Chen, Rui Lu, Andrew Zhao, Zhaokai Wang, Yang Yue, Shiji Song, and Gao Huang.
+\newblock Does reinforcement learning really incentivize reasoning capacity in llms beyond the base model?
+\newblock \emph{CoRR}, abs/2504.13837, 2025.
+
+\bibitem[Yoshihara et~al.(2025)Yoshihara, Yamaguchi, and Inoue]{SFT-then-RL}
+Hiroshi Yoshihara, Taiki Yamaguchi, and Yuichi Inoue.
+\newblock A practical two-stage recipe for mathematical llms: Maximizing accuracy with {SFT} and efficiency with reinforcement learning.
+\newblock \emph{CoRR}, abs/2507.08267, 2025.
+
+\bibitem[Cheng et~al.(2025)Cheng, Hao, Liu, Zhou, Xie, Yao, Bian, Zhuang, Dey, Zha, Gu, Zhou, Wang, Li, Fan, She, Gao, Saparov, Li, Killian, Yurochkin, Liu, Xing, and Hu]{RevisitingRL}
+Zhoujun Cheng, Shibo Hao, Tianyang Liu, Fan Zhou, Yutao Xie, Feng Yao, Yuexin Bian, Yonghao Zhuang, Nilabjo Dey, Yuheng Zha, Yi~Gu, Kun Zhou, Yuqi Wang, Yuan Li, Richard Fan, Jianshu She, Chengqian Gao, Abulhair Saparov, Haonan Li, Taylor~W. Killian, Mikhail Yurochkin, Zhengzhong Liu, Eric~P. Xing, and Zhiting Hu.
+\newblock Revisiting reinforcement learning for {LLM} reasoning from {A} cross-domain perspective.
+\newblock \emph{CoRR}, abs/2506.14965, 2025.
+
+\end{thebibliography}

@@ -1,0 +1,79 @@
+\section{Preliminary}
+
+In this section, we formulate the generative recommendation task from a modeling perspective, focusing on a \emph{sequential recommendation} setting with two key components: a tokenizer and a recommender. Here, we take TIGER~\cite{TIGER} as a representative example to illustrate the framework due to its widespread adoption. Let $\mathcal{I}$ denote the entire set of items. Given a user's interaction sequence $S = [i_1, i_2, \ldots, i_T]$, the objective is to predict the next target item $i_{T+1} \in \mathcal{I}$. Generative recommendation reformulates this problem as directly generating the target item from the tokenized interaction history, rather than retrieving it from a massive candidate set, as in traditional matching-based paradigms~\cite{SASRec}.
+
+\subsection{Item Tokenization}
+\subsubsection{Overview}
+In this stage, each item is encoded into a sequence of discrete tokens using a tokenizer model $\mathcal{T}$ based on an RQ-VAE~\cite{RQ-VAE}. The tokenizer quantizes continuous item semantic embeddings (\eg usually textual representations~\cite{TIGER,LETTER}) into hierarchical token sequences in a coarse-to-fine manner. Each token corresponds to a codeword from a level-specific codebook, where the first-level codewords capture coarse semantics and deeper-level codewords progressively refine item-specific details.
+Formally, given an item $i$ with semantic embedding $\bm{z}$, the tokenizer produces an $L$-level token sequence:
+\begin{equation}
+[c_1, \ldots, c_L] = \mathcal{T}(\bm{z}),
+\end{equation}
+where $c_l$ denotes the selected codeword at level $l$.
+
+\subsubsection{Tokenizer}
+We next introduce the architecture and optimization of the tokenizer model. First, the tokenizer $\mathcal{T}$ encodes the item semantic embedding $\bm{z}$ into a latent representation using an MLP-based encoder:
+\begin{equation}
+\bm{r} = \text{Encoder}_{\mathcal{T}}(\bm{z}).
+\end{equation}
+The latent representation $\bm{r}$ is then discretized into $L$ hierarchical tokens via residual vector quantization with $L$ independent codebooks. For the $l$-th level, the codebook $\bm{\mathcal{C}}_l = \{\bm{e}_l^k\}_{k=1}^{K}$ consists of $K$ codeword embeddings. The token assignment and residual update are defined as:
+\begin{align}\label{eq:assgin}
+c_l &= \arg\min_k \lVert \bm{v}_l - \bm{e}_l^k \rVert^2, \\
+\bm{v}_l &= \bm{v}_{l-1} - \bm{e}_{l-1}^{c_{l-1}},
+\end{align}
+where $\bm{v}_1 = \bm{r}$ and $\bm{v}_l$ denotes the residual vector at level $l$.
+After quantization across all levels, the final discrete representation is obtained by aggregating the selected codeword embeddings:
+\begin{equation}
+\tilde{\bm{r}} = \sum_{l=1}^{L} \bm{e}_l^{c_l}.
+\end{equation}
+An MLP-based decoder then reconstructs the semantic embedding:
+\begin{equation}
+\tilde{\bm{z}} = \text{Decoder}_{\mathcal{T}}(\tilde{\bm{r}}).
+\end{equation}
+
+The tokenizer is optimized by minimizing a reconstruction loss together with a quantization loss:
+\begin{equation}\label{eq:rqvae_loss}
+\mathcal{L}_\text{Token} =
+\underbrace{\lVert \tilde{\bm{z}} - \bm{z} \rVert^2}_{\mathcal{L}_\text{Recon}}
++ \underbrace{\sum_{l=1}^{L} \Big(
+\lVert \text{sg}(\bm{v}_l) - \bm{e}_l^{c_l} \rVert^2
++ \beta \lVert \bm{v}_l - \text{sg}(\bm{e}_l^{c_l}) \rVert^2
+\Big)}_{\mathcal{L}_\text{Quant}}.
+\end{equation}
+where $\text{sg}(\cdot)$ denotes the stop-gradient operator and $\beta$ is a weighting coefficient (set to $0.25$ by default) that balances the updates between the encoder and the codebooks. The reconstruction term encourages $\tilde{\bm{z}}$ to approximate $\bm{z}$, while the remaining terms enforce consistent quantization of residual representations.
+
+By applying the tokenizer to each item in the interaction history, the input sequence $S$ is transformed into a flattened token sequence:
+\begin{equation}
+X = [c_1^1, \ldots, c_L^1, \ldots, c_1^{T}, \ldots, c_L^{T}],
+\end{equation}
+where $c_l^j$ denotes the $l$-th token of item $i_j$. Likewise, the ground-truth next item $i_{T+1}$ is encoded as
+\begin{equation}
+Y = [c_1^{T+1}, \ldots, c_L^{T+1}].
+\end{equation}
+
+
+\subsection{Autoregressive Generation}
+
+\subsubsection{Overview}
+In this stage, next-item prediction is formulated as an autoregressive sequence generation task conditioned on the tokenized interaction history. Given the flattened token sequence $X$, the recommender generates the target item tokens in a left-to-right manner, where each token is predicted based on $X$ and previously generated tokens. This formulation allows the model to capture fine-grained semantic information encoded in item tokens as well as sequential collaborative signals from user interactions.
+
+\subsubsection{Recommender}
+We now describe the architecture and optimization of the recommender model $\mathcal{R}$, which adopts a Transformer-based encoder--decoder architecture~\cite{T5}. The input token sequence $X$ is first mapped to embeddings via a shared token embedding table $\bm{\mathcal{O}} \in \mathbb{R}^{|\mathcal{V}|\times D}$:
+\begin{equation}\label{eq:rec_input}
+\bm{E}^X = [\bm{o}_1^1, \ldots, \bm{o}_L^T],
+\end{equation}
+where $\bm{o}_l^t$ denotes the embedding of the $l$-th token of item $i_t$, $\mathcal{V}$ is the token vocabulary, and $D$ is the embedding dimension. The encoder processes $\bm{E}^X$ to produce contextualized representations:
+\begin{equation}\label{eq:rec_encoder}
+\bm{H}^{\text{Enc}} = \text{Encoder}_{\mathcal{R}}(\bm{E}^X).
+\end{equation}
+For decoding, the decoder generates the target token sequence autoregressively, conditioned on the encoder outputs and the previously generated tokens. During training, a beginning-of-sequence token [BOS] is prepended to the target sequence, and teacher forcing is applied by feeding the ground-truth prefix tokens to the decoder. The decoder produces hidden states as:
+\begin{equation}\label{eq:rec_decoder}
+\bm{H}^{\text{Dec}} = \text{Decoder}_{\mathcal{R}}(\bm{H}^{\text{Enc}}, \bm{E}^Y),
+\end{equation}
+where $\bm{E}^Y = [\bm{o}^{\text{BOS}}, \bm{o}_1^{T+1}, \ldots, \bm{o}_L^{T+1}]$.
+
+Each decoder hidden state is projected onto the token vocabulary via inner product with $\bm{\mathcal{O}}$ to predict the next token. The recommender is trained by minimizing the negative log-likelihood of the target token sequence:
+\begin{equation}\label{eq:loss_rec}
+\mathcal{L}_{\text{Rec}} = -\sum_{l=1}^{L} \log P(Y_l \mid X, Y_{<l}),
+\end{equation}
+where $Y_l$ denotes the $l$-th token of the target item $i_{T+1}$.

@@ -46,6 +46,7 @@ def generate_indices(
     device: str = "cuda:0",
     max_dedup_iters: int = 20,
     num_workers: int = 4,
+    token_format: str = "auto",
 ) -> str:
     """从 RQ-VAE checkpoint 生成所有 item 的 SID token 索引。
 
@@ -125,9 +126,13 @@ def generate_indices(
     )
 
     # Convert to contract format: {str(item_id): [token, ...]}
+    # token_format: 'auto' → 位置前缀 a/b/c/...；单字符 → [char_N] 统一前缀
     index_dict = {}
     for item_id, idx in enumerate(all_indices):
-        tokens = [f"[{prefix_list[i]}_{int(c)}]" for i, c in enumerate(idx)]
+        if token_format == "auto":
+            tokens = [f"[{prefix_list[i]}_{int(c)}]" for i, c in enumerate(idx)]
+        else:
+            tokens = [f"[{token_format}_{int(c)}]" for c in idx]
         index_dict[str(item_id)] = tokens
 
     os.makedirs(os.path.dirname(output_path) if os.path.dirname(output_path) else ".", exist_ok=True)

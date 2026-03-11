@@ -169,3 +169,44 @@ def _save_index_json(codes: np.ndarray, output_path: str) -> None:
     all_strs = ["".join(v) for v in index_dict.values()]
     collision_rate = (len(all_strs) - len(set(all_strs))) / len(all_strs)
     logger.info(f"Collision rate: {collision_rate:.4f}")
+
+
+# ---- SIDMethod adapter ----
+
+from SAEGenRec.sid_builder.base import SIDMethod
+from SAEGenRec.sid_builder.registry import register_sid_method
+
+
+@register_sid_method("rqkmeans")
+class RQKMeansMethod(SIDMethod):
+    """RQ-KMeans SID 生成方法适配器。"""
+
+    name = "rqkmeans"
+    default_k = 3
+    token_format = "auto"  # 使用位置前缀 a/b/c/...
+
+    def train(self, embedding_path: str, output_dir: str = "models/rqkmeans", **config) -> str:
+        variant = config.pop("variant", "faiss")
+        if variant == "constrained":
+            return rqkmeans_constrained(embedding_path=embedding_path, **config)
+        elif variant == "plus":
+            return rqkmeans_plus(embedding_path=embedding_path, **config)
+        else:
+            return rqkmeans_faiss(embedding_path=embedding_path, output_dir=output_dir, **config)
+
+    def generate(
+        self,
+        checkpoint: str,
+        embedding_path: str,
+        output_path: str,
+        k: int = None,
+        token_format: str = "auto",
+    ) -> str:
+        from SAEGenRec.sid_builder.generate_indices import generate_indices
+
+        return generate_indices(
+            checkpoint=checkpoint,
+            embedding_path=embedding_path,
+            output_path=output_path,
+            token_format=token_format,
+        )

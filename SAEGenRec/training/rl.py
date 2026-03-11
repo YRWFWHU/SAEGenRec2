@@ -3,27 +3,19 @@
 Ported from references/MiniOneRec/rl.py
 """
 
-import json
 import os
 import random
 from typing import Optional
 
+from loguru import logger
 import numpy as np
 import torch
-from loguru import logger
-from torch.utils.data import ConcatDataset
 from trl import GRPOConfig
 
 from SAEGenRec.config import CATEGORY_MAP
 from SAEGenRec.datasets.rl_datasets import RLSeqTitle2SidDataset, RLTitle2SidDataset, SidDataset
 from SAEGenRec.evaluation.logit_processor import build_prefix_tree
-from SAEGenRec.training.rewards import (
-    prefix_reward,
-    ranking_reward,
-    rule_reward,
-    sasrec_reward,
-    semantic_reward,
-)
+from SAEGenRec.training.rewards import parse_reward_type
 from SAEGenRec.training.trainer import ReReTrainer
 
 
@@ -46,6 +38,8 @@ def rl(
     num_generations: int = 16,
     eval_step: float = 0.199,
     reward_type: str = "rule",
+    reward_weights: str = "",
+    prompt_template: str = "",
     beam_search: bool = False,
     test_beam: int = 20,
     dynamic_sampling: bool = False,
@@ -63,6 +57,12 @@ def rl(
     item_meta_path: str = "",
     cf_path: str = "",
     ada_path: str = "",
+    eval_rec: bool = False,
+    eval_rec_steps: int = 100,
+    eval_rec_beams: int = 10,
+    eval_rec_samples: int = 200,
+    eval_test_csv: str = "",
+    eval_info_file: str = "",
 ) -> None:
     """RL 训练入口。
 
@@ -70,7 +70,9 @@ def rl(
         model_path: SFT checkpoint 路径
         train_csv: 训练 CSV 路径
         info_file: info TXT 路径（用于构建前缀树）
-        reward_type: "rule" | "ranking" | "semantic" | "sasrec"
+        reward_type: 奖励函数名称，支持 '+' 组合，如 "rule+prefix"
+        reward_weights: 组合奖励权重，如 "0.7,0.3"
+        prompt_template: 自定义 prompt 模板路径（空字符串时使用数据集默认）
     """
     torch.backends.cuda.enable_flash_sdp(False)
     torch.backends.cuda.enable_mem_efficient_sdp(False)
@@ -81,10 +83,6 @@ def rl(
 
     os.environ.setdefault("WANDB_MODE", "disabled")
     os.environ["WANDB_PROJECT"] = wandb_project
-
-    # Load info file
-    with open(info_file) as f:
-        info_lines = f.readlines()
 
     cat_name = CATEGORY_MAP.get(category, category)
 
@@ -128,7 +126,7 @@ def rl(
     logger.info(f"RL training samples: {len(hf_train)}")
 
     # Load model and tokenizer
-    from transformers import AutoModelForCausalLM, AutoTokenizer
+    from transformers import AutoTokenizer
 
     tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
     tokenizer.pad_token = tokenizer.eos_token
@@ -144,15 +142,17 @@ def rl(
 
         prefix_allowed_tokens_fn = prefix_fn
 
-    # Select reward function
-    reward_funcs = {
-        "rule": rule_reward,
-        "prefix": prefix_reward,
-        "ranking": ranking_reward,
-        "semantic": semantic_reward,
-        "sasrec": sasrec_reward,
-    }
-    reward_fn = reward_funcs.get(reward_type, rule_reward)
+    # Load custom prompt template if provided
+    if prompt_template:
+        from SAEGenRec.datasets.template_utils import load_template
+        _prompt_tmpl = load_template(prompt_template)
+        logger.info(f"Loaded prompt template from: {prompt_template}")
+    else:
+        _prompt_tmpl = None
+
+    # Select reward function (supports '+' combined syntax)
+    reward_fn = parse_reward_type(reward_type, reward_weights)
+    logger.info(f"Reward function: {reward_type}" + (f" (weights: {reward_weights})" if reward_weights else ""))
 
     def compute_rewards(prompts, completions, **kwargs):
         rewards = []
@@ -162,6 +162,24 @@ def rl(
             r = reward_fn([completion], target)[0]
             rewards.append(r)
         return rewards
+
+    # TrainingEvaluator callback (optional)
+    rl_callbacks = []
+    if eval_rec:
+        try:
+            from SAEGenRec.evaluation.training_evaluator import TrainingEvaluator
+            evaluator = TrainingEvaluator(
+                eval_rec_steps=eval_rec_steps,
+                eval_rec_beams=eval_rec_beams,
+                eval_rec_samples=eval_rec_samples,
+                test_csv=eval_test_csv or "",
+                info_file=eval_info_file or info_file,
+                category=category,
+            )
+            rl_callbacks.append(evaluator)
+            logger.info(f"TrainingEvaluator callback registered (every {eval_rec_steps} steps).")
+        except Exception as e:
+            logger.warning(f"Could not create TrainingEvaluator: {e}")
 
     # GRPOConfig
     grpo_config = GRPOConfig(
@@ -197,6 +215,7 @@ def rl(
         reward_type=reward_type,
         info_file=info_file,
         base_model_name=model_path,
+        callbacks=rl_callbacks if rl_callbacks else None,
     )
 
     trainer.train()

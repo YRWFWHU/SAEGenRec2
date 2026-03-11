@@ -38,6 +38,8 @@ dependencies = [
     "sentence-transformers",
     "tqdm",
     "sae-lens",
+    "Pillow",
+    "requests",
 ]
 requires-python = "~=3.12.0"
 

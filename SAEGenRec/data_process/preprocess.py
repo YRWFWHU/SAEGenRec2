@@ -340,12 +340,10 @@ def preprocess(
         seed: 随机种子（用于 item_id 分配）
         metadata/reviews: 可选，直接传入数据（用于测试）
     """
-    if st_year < 1996:
-        return
-
-    start_timestamp = get_timestamp_start(st_year, st_month)
-    end_timestamp = get_timestamp_start(ed_year, ed_month)
-    logger.info(f"Time range: {start_timestamp} to {end_timestamp}")
+    import sys
+    start_timestamp = get_timestamp_start(max(st_year, 1), st_month) if st_year >= 1 else 0
+    end_timestamp = get_timestamp_start(min(ed_year, 9999), ed_month) if ed_year <= 9999 else sys.maxsize
+    logger.info(f"Time range: {start_timestamp} to {end_timestamp} (no filter = full range)")
 
     if metadata is None or reviews is None:
         metadata, reviews = _load_raw_data(raw_data_dir, category)

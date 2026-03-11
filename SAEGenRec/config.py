@@ -212,6 +212,33 @@ class GatedSAEConfig(BaseConfig):
 
 
 @dataclass
+class VisualEmbConfig(BaseConfig):
+    """视觉特征提取配置。"""
+
+    vision_model: str = "openai/clip-vit-base-patch32"
+    batch_size: int = 64
+    device: str = "cuda"
+    data_dir: str = "data/interim"
+    image_dir: str = ""  # 默认为 data/interim/{category}/images
+
+
+@dataclass
+class PrepSFTConfig(BaseConfig):
+    """prepare_sft 数据预构建配置。"""
+
+    category: str = ""
+    sid_type: str = "rqvae"
+    task: str = "sid_seq"
+    dataset: str = "Amazon"
+    prompt_template: str = ""  # 空字符串时按 task 自动查找默认模板
+    data_dir: str = "data/processed"
+    interim_dir: str = "data/interim"
+    overwrite: bool = False
+    tasks: str = ""  # 多任务混合：'sid_seq+item_feat'
+    task_weights: str = ""  # 混合权重：'0.7,0.3'
+
+
+@dataclass
 class SASRecConfig(BaseConfig):
     """SASRec / GRU / Caser 协同过滤模型训练配置。"""
 

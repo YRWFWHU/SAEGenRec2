@@ -1,0 +1,364 @@
+%%
+%% This is file `sample-authordraft.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `authordraft')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-authordraft.tex.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+%% Commands for TeXCount
+%TC:macro \cite [option:text,text]
+%TC:macro \citep [option:text,text]
+%TC:macro \citet [option:text,text]
+%TC:envir table 0 1
+%TC:envir table* 0 1
+%TC:envir tabular [ignore] word
+%TC:envir displaymath 0 word
+%TC:envir math 0 word
+%TC:envir comment 0 0
+%%
+%%
+%% The first command in your LaTeX source must be the \documentclass command.
+% \PassOptionsToPackage{prologue,table,xcdraw}{xcolor}
+% \documentclass[sigconf,review]{acmart}
+% \documentclass[sigconf,natbib=true,anonymous=true]{acmart}
+
+\documentclass[sigconf]{acmart}
+
+% Please add the following required packages to your document preamble:
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+% Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+
+\usepackage{enumitem}
+\let\Bbbk\relax
+\usepackage{amssymb}
+
+\usepackage{pifont}
+\usepackage{mathtools}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{bm}
+\usepackage{verbatim}
+\usepackage{ragged2e}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{amsmath}
+\usepackage{longtable}
+\usepackage{adjustbox}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{balance}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\newcommand{\ie}{\emph{i.e., }}
+\newcommand{\eg}{\emph{e.g., }}
+\newcommand{\etal}{\emph{et al.}}
+\newcommand{\st}{\emph{s.t. }}
+\newcommand{\etc}{\emph{etc.}}
+\newcommand{\wrt}{\emph{w.r.t. }}
+\newcommand{\cf}{\emph{cf. }}
+\newcommand{\aka}
+
+\newcommand{\bym}[1]{\textcolor{blue}{#1}}
+\newcommand{\ljl}[1]{\textcolor{red}{#1}}
+
+%% NOTE that a single column version may required for 
+%% submission and peer review. This can be done by changing
+%% the \doucmentclass[...]{acmart} in this template to 
+%% \documentclass[manuscript,screen]{acmart}
+%% 
+%% To ensure 100% compatibility, please check the white list of
+%% approved LaTeX packages to be used with the Master Article Template at
+%% https://www.acm.org/publications/taps/whitelist-of-latex-packages 
+%% before creating your document. The white list page provides 
+%% information on how to submit additional LaTeX packages for 
+%% review and adoption.
+%% Fonts used in the template cannot be substituted; margin 
+%% adjustments are not allowed.
+
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+%% Rights management information.  This information is sent to you
+%% when you complete the rights form.  These commands have SAMPLE
+%% values in them; it is your responsibility as an author to replace
+%% the commands and values with those provided to you when you
+%% complete the rights form.
+% \setcopyright{acmcopyright}
+% \copyrightyear{2018}
+% \acmYear{2018}
+% \acmDOI{XXXXXXX.XXXXXXX}
+
+% %% These commands are for a PROCEEDINGS abstract or paper.
+% \acmConference[Conference acronym 'XX]{Make sure to enter the correct
+%   conference title from your rights confirmation emai}{June 03--05,
+%   2018}{Woodstock, NY}
+% %
+% %  Uncomment \acmBooktitle if th title of the proceedings is different
+% %  from ``Proceedings of ...''!
+% %
+% %\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
+% %  June 03--05, 2018, Woodstock, NY} 
+% \acmPrice{15.00}
+% \acmISBN{978-1-4503-XXXX-X/18/06}
+
+\copyrightyear{2018}
+\setcopyright{acmlicensed}
+\acmYear{2018}
+\acmDOI{XXXXXXX.XXXXXXX}
+\acmConference[Conference acronym 'XX]{Make sure to enter the correct
+  conference title from your rights confirmation emai}{June 03--05,
+  2018}{Woodstock, NY}
+\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
+ June 03--05, 2018, Woodstock, NY} 
+\acmISBN{978-1-4503-XXXX-X/18/06}
+
+%%
+%% Submission ID.
+%% Use this when submitting an article to a sponsored event. You'll
+%% receive a unique submission ID from the organizers
+%% of the event, and this ID should be used as the parameter to this command.
+%%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% For managing citations, it is recommended to use bibliography
+%% files in BibTeX format.
+%%
+%% You can then either use BibTeX with the ACM-Reference-Format style,
+%% or BibLaTeX with the acmnumeric or acmauthoryear sytles, that include
+%% support for advanced citation of software artefact from the
+%% biblatex-software package, also separately available on CTAN.
+%%
+%% Look at the sample-*-biblatex.tex files for templates showcasing
+%% the biblatex styles.
+%%
+
+%%
+%% For managing citations, it is recommended to use bibliography
+%% files in BibTeX format.
+%%
+%% You can then either use BibTeX with the ACM-Reference-Format style,
+%% or BibLaTeX with the acmnumeric or acmauthoryear sytles, that include
+%% support for advanced citation of software artefact from the
+%% biblatex-software package, also separately available on CTAN.
+%%
+%% Look at the sample-*-biblatex.tex files for templates showcasing
+%% the biblatex styles.
+%%
+
+%%
+%% The majority of ACM publications use numbered citations and
+%% references.  The command \citestyle{authoryear} switches to the
+%% "author year" style.
+%%
+%% If you are preparing content for an event
+%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
+%% citations and references.
+%% Uncommenting
+%% the next command will enable that style.
+%%\citestyle{acmauthoryear}
+
+%%
+%% end of the preamble, start of the body of the document source.
+\begin{document}
+
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+% \title{Unified Optimization of Tokenizer and Recommender for Generative Recommendation}
+\title{UniGRec: Unified Generative Recommendation with Soft Identifiers for End-to-End Optimization}
+
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+
+\author{Jialei Li}
+\orcid{0009-0007-9845-0251}
+\affiliation{
+  \institution{University of Science and Technology of China}
+  \city{Hefei}
+  \country{China}
+}
+\email{lijialei.cn@gmail.com}
+
+\author{Yang Zhang}
+\orcid{0000-0002-7863-5183}
+\affiliation{
+  \institution{National University of Singapore}
+  \city{Singapore}
+  \country{Singapore}
+}
+\email{zyang1580@gmail.com}
+
+\author{Yimeng Bai}
+\orcid{0009-0008-8874-9409}
+\affiliation{
+  \institution{University of Science and Technology of China}
+  \city{Hefei}
+  \country{China}
+}
+\email{baiyimeng@mail.ustc.edu.cn}
+
+\author{Shuai Zhu}
+\orcid{}
+\affiliation{
+  \institution{University of Science and Technology of China}
+  \city{Hefei}
+  \country{China}
+}
+\email{zhushuaiozj@mail.ustc.edu.cn}
+
+\author{Ziqi Xue}
+\orcid{}
+\affiliation{
+  \institution{University of Science and Technology of China}
+  \city{Hefei}
+  \country{China}
+}
+\email{ziqi@mail.ustc.edu.cn}
+
+
+\author{Xiaoyan Zhao}
+\orcid{0000-0001-6001-1260}
+\affiliation{
+  \institution{The Chinese University of Hong Kong}
+  \city{Hong Kong}
+  \country{China}}
+\email{xzhao@se.cuhk.edu.hk}
+
+\author{Dingxian Wang}
+\orcid{0000-0002-6880-7869}
+\affiliation{
+  \institution{Upwork}
+  \city{Seattle}
+  \country{USA}
+}
+\email{dingxianwang@upwork.com}
+
+\author{Frank Yang}
+\orcid{}
+\affiliation{
+  \institution{Upwork}
+  \city{Seattle}
+  \country{USA}
+}
+\email{frankyang@upwork.com}
+
+\author{Andrew Rabinovich}
+\orcid{}
+\affiliation{
+  \institution{Upwork}
+  \city{Seattle}
+  \country{USA}
+}
+\email{andrewrabinovich@upwork.com}
+
+\author{Xiangnan He}
+\orcid{0000-0001-8472-7992}
+\affiliation{
+  \institution{University of Science and Technology of China}
+  \city{Hefei}
+  \country{China}
+}
+\email{xiangnanhe@gmail.com}
+
+% \def\authors{Yang Zhang}
+
+%%
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+
+\renewcommand{\shortauthors}{Jialei Li et al.}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+\input{1_abs}
+
+%%
+%% The code below is generated by the tool at http://dl.acm.org/ccs.cfm
+%% Please copy and paste the code instead of the example below.
+%%
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+       <concept_id>10002951.10003317.10003347.10003356</concept_id>
+       <concept_desc>Information systems~Clustering and classification</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+ </ccs2012>
+\end{CCSXML}
+
+
+\ccsdesc[500]{Information systems~Recommender systems}
+
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+
+\keywords{Generative Recommendation; Item Tokenization; Soft
+Identifier; End-to-End Optimization}
+
+%% A "teaser" image appears between the author and affiliation
+%% information and the body of the document, and typically spans the
+%% page.
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\maketitle
+
+\input{2_intro}
+\input{3_pre}
+\input{4_method}
+\input{5_exp}
+\input{6_rel}
+\input{7_con}
+
+%%
+%% The next two lines define the bibliography style to be used, and
+%% the bibliography file.
+\bibliographystyle{ACM-Reference-Format}
+\balance
+\bibliography{8_ref}
+
+\input{9_app}
+%%
+%% If your work has an appendix, this is the place to put it.
+% \appendix
+
+\end{document}
