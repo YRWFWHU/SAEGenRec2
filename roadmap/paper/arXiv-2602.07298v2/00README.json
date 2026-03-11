@@ -1,0 +1,121 @@
+{
+   "sources" : [
+      {
+         "usage" : "toplevel",
+         "filename" : "paper.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "Makefile"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/Optimistic.ttf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/nice_plot.py"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/optimistic.tfm"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/plot_demo.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/cf_domain_ablation.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/combined_isoflops_SAE_30M.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/combined_isoloss_SAE_30M.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/combined_isoppl_SAE_30M.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/comparison_0_6B.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/comparison_14B.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/comparison_1_7B.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/comparison_32B.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/comparison_4B.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/comparison_8B.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/item_domain_ablation.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/rq_kmeans_15p_compute_optimal.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/rq_kmeans_2p_compute_optimal.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/rq_kmeans_30M_compute_optimal.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/rq_kmeans_across_scales_15pt.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/rq_kmeans_across_scales_2pt.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/rq_kmeans_across_scales_30M.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/socae_15p_compute_optimal.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/socae_2p_compute_optimal.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/socae_30M_compute_optimal.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/token_comparison_4B.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figure/tokenizer_comparison_8B.pdf"
+      }
+   ],
+   "spec_version" : 1,
+   "texlive_version" : "2025",
+   "process" : {
+      "compiler" : "pdflatex"
+   }
+}

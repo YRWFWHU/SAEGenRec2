@@ -144,6 +144,8 @@ raw Amazon JSON → preprocess → .inter + .item.json + .review.json
 - 文件系统（TSV `.inter`, JSON `.item.json`/`.review.json`/`.index.json`, NPY `.npy`, CSV, TXT） (001-modularize-framework)
 - Python 3.12 + SAELens (sae-lens), PyTorch, NumPy, loguru, fire (002-gated-sae-sid)
 - .npy（输入 embedding）、safetensors + JSON（GatedSAE checkpoint）、JSON（.index.json 输出） (002-gated-sae-sid)
+- Python 3.12 + PyTorch, HuggingFace Transformers, TRL (GRPO), sentence-transformers, SAELens, FAISS, fire, loguru, Pillow, requests (图像下载), transformers (视觉模型) (003-modular-framework-extension)
+- 文件系统（NPY、JSONL、JSON、CSV、TXT、JPEG） (003-modular-framework-extension)
 
 ## Recent Changes
 - 001-modularize-framework: Added Python 3.12 + PyTorch, HuggingFace Transformers, TRL (GRPO), DeepSpeed, FAISS, fire, loguru, sentence-transformers

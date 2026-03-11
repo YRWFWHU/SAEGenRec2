@@ -1,0 +1,21 @@
+{
+   "sources" : [
+      {
+         "usage" : "toplevel",
+         "filename" : "aaai.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "aaai.bbl"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "aaai.bib"
+      }
+   ],
+   "spec_version" : 1,
+   "texlive_version" : "2025",
+   "process" : {
+      "compiler" : "pdflatex"
+   }
+}

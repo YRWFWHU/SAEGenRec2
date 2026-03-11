@@ -1,0 +1,32 @@
+\section{Background and Related Work}
+\label{bg}
+\subsection{Generative Recommendation}
+
+In the last few years, formulating recommendation as a sequence generation problem has become a vibrant research direction \citep{TIGER, GenRec-Direction}.  
+Under this view, a recommender is trained to predict the tokens of the next item in an end-to-end manner, typically with a Transformer backbone \citep{Transformer}.  
+Such a design removes the rigid \slh{multi-stage} “matching–ranking” pipeline in traditional retrieval-based recommender systems \citep{SASRec, GRU4Rec} and therefore pushes the performance upper bound.
+
+Early explorations illustrate two key components: (1) turning an item into a discrete code (SIDs) and (2) letting the model produce the code.  
+TIGER~\citep{TIGER} adopts RQ-VAE~\citep{rqvae} to map textual embeddings of titles and descriptions into SIDs.  
+HSTU~\citep{HSTU} introduces a streaming architecture that is friendly to high-cardinality and non-stationary logs.  
+LC-Rec~\citep{LCRec} aligns an LLM with the SIDs through multi-task learning so that the model can understand these symbols during generation.  
+
+Subsequent work focuses on designing better codes.  
+RecForest~\citep{recforest} clusters items via hierarchical $k$-means and uses the cluster indices as tokens.  
+EAGER~\citep{eagar} and TokenRec~\citep{TOKENRec} fuse collaborative and semantic evidence directly into the tokenizer.  
+
+At industrial scale, generative recommenders have started to replace heavy cascade systems.  
+MTGR~\citep{mtgr} keeps the original DLRM features, adds user-level compression, and accelerates both training and inference.  
+OneRec~\citep{onerec-tech-v2} reduces serving cost through a lazy decoder-only layout and stabilizes optimization with an improved RL algorithm.  
+OnePiece~\citep{OnePiece} discovers that performing inference in the latent space can further improve generative recommendation performance.
+
+\subsection{LLM and RL}
+
+RL aims at maximizing cumulative reward through repeated interaction~\citep{RLsurvey}.  
+When fine-tuning LLMs, RL with Human Feedback (RLHF) has become a standard recipe; PPO~\citep{PPO} is the most common optimizer but is memory-intensive for billion-scale parameters.  
+To reduce cost, Direct Preference Optimization (DPO)~\citep{DPO} removes the separate value network and maximizes the log-likelihood gap between preferred and dispreferred outputs.  
+S-DPO~\citep{sdpo} adapts this idea to recommendation by treating softmax-based negative sampling as implicit pairwise preference.  
+Nevertheless, preference-based objectives are off-policy and may converge prematurely.
+
+Light-weight on-line methods have therefore been proposed.  
+GRPO~\citep{deepseekmath} normalizes rewards within a small batch of roll-outs and replaces the learned reward model by rule-based signals, achieving strong gains in maths and code generation.  

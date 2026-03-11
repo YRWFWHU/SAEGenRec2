@@ -1,0 +1,253 @@
+\begin{thebibliography}{50}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Bai et~al.(2022)Bai, Jones, Ndousse, Askell, Chen, DasSarma, Drain, Fort, Ganguli, Henighan et~al.}]{rlhf2}
+Bai, Y.; Jones, A.; Ndousse, K.; Askell, A.; Chen, A.; DasSarma, N.; Drain, D.; Fort, S.; Ganguli, D.; Henighan, T.; et~al. 2022.
+\newblock Training a helpful and harmless assistant with reinforcement learning from human feedback.
+\newblock \emph{arXiv preprint arXiv:2204.05862}.
+
+\bibitem[{Bao et~al.(2025)Bao, Zhang, Wang, Zhang, Yang, Luo, Chen, Feng, and Tian}]{bigrec}
+Bao, K.; Zhang, J.; Wang, W.; Zhang, Y.; Yang, Z.; Luo, Y.; Chen, C.; Feng, F.; and Tian, Q. 2025.
+\newblock A bi-step grounding paradigm for large language models in recommendation systems.
+\newblock \emph{ACM Transactions on Recommender Systems}, 3(4): 1--27.
+
+\bibitem[{Briskorn and Dienstknecht(2019)}]{twt1}
+Briskorn, D.; and Dienstknecht, M. 2019.
+\newblock Mixed-integer programming models for tower crane selection and positioning with respect to mutual interference.
+\newblock \emph{European Journal of Operational Research}, 273(1): 160--174.
+
+\bibitem[{Chen et~al.(2024{\natexlab{a}})Chen, Liu, Huang, Wu, Liu, Jiang, Pu, Lei, Chen, Wang et~al.}]{goal}
+Chen, J.; Liu, Z.; Huang, X.; Wu, C.; Liu, Q.; Jiang, G.; Pu, Y.; Lei, Y.; Chen, X.; Wang, X.; et~al. 2024{\natexlab{a}}.
+\newblock When large language models meet personalization: Perspectives of challenges and opportunities.
+\newblock \emph{World Wide Web}, 27(4): 42.
+
+\bibitem[{Chen et~al.(2023)Chen, Liu, He, Sun, and Sun}]{dsi2}
+Chen, X.; Liu, Y.; He, B.; Sun, L.; and Sun, Y. 2023.
+\newblock Understanding differential search index for text retrieval.
+\newblock \emph{arXiv preprint arXiv:2305.02073}.
+
+\bibitem[{Chen et~al.(2024{\natexlab{b}})Chen, Tan, Zhang, Yang, Sheng, Zhang, Wang, and Chua}]{softmax-dpo}
+Chen, Y.; Tan, J.; Zhang, A.; Yang, Z.; Sheng, L.; Zhang, E.; Wang, X.; and Chua, T.-S. 2024{\natexlab{b}}.
+\newblock On softmax direct preference optimization for recommendation.
+\newblock \emph{Advances in Neural Information Processing Systems}, 37: 27463--27489.
+
+\bibitem[{Deng et~al.(2025)Deng, Wang, Cai, Ren, Hu, Ding, Luo, and Zhou}]{onerec}
+Deng, J.; Wang, S.; Cai, K.; Ren, L.; Hu, Q.; Ding, W.; Luo, Q.; and Zhou, G. 2025.
+\newblock Onerec: Unifying retrieve and rank with generative recommender and iterative preference alignment.
+\newblock \emph{arXiv preprint arXiv:2502.18965}.
+
+\bibitem[{Furuta et~al.(2024)Furuta, Lee, Gu, Matsuo, Faust, Zen, and Gur}]{cdpo}
+Furuta, H.; Lee, K.-H.; Gu, S.~S.; Matsuo, Y.; Faust, A.; Zen, H.; and Gur, I. 2024.
+\newblock Geometric-averaged preference optimization for soft preference labels.
+\newblock \emph{Advances in Neural Information Processing Systems}, 37: 57076--57114.
+
+\bibitem[{Gao et~al.(2025)Gao, Chen, Yuan, Huang, Yu, and He}]{spdpo}
+Gao, C.; Chen, R.; Yuan, S.; Huang, K.; Yu, Y.; and He, X. 2025.
+\newblock Sprec: Self-play to debias llm-based recommendation.
+\newblock In \emph{Proceedings of the ACM on Web Conference 2025}, 5075--5084.
+
+\bibitem[{He et~al.(2020)He, Deng, Wang, Li, Zhang, and Wang}]{lightgcn}
+He, X.; Deng, K.; Wang, X.; Li, Y.; Zhang, Y.; and Wang, M. 2020.
+\newblock Lightgcn: Simplifying and powering graph convolution network for recommendation.
+\newblock In \emph{Proceedings of the 43rd International ACM SIGIR conference on research and development in Information Retrieval}, 639--648.
+
+\bibitem[{Hong et~al.(2025)Hong, Xia, Wang, Zhu, Wang, Cai, Yang, Dai, Dong, Zhang et~al.}]{eager-llm}
+Hong, M.; Xia, Y.; Wang, Z.; Zhu, J.; Wang, Y.; Cai, S.; Yang, X.; Dai, Q.; Dong, Z.; Zhang, Z.; et~al. 2025.
+\newblock EAGER-LLM: Enhancing Large Language Models as Recommenders through Exogenous Behavior-Semantic Integration.
+\newblock In \emph{Proceedings of the ACM on Web Conference 2025}, 2754--2762.
+
+\bibitem[{Hu et~al.(2022)Hu, Shen, Wallis, Allen-Zhu, Li, Wang, Wang, Chen et~al.}]{lora}
+Hu, E.~J.; Shen, Y.; Wallis, P.; Allen-Zhu, Z.; Li, Y.; Wang, S.; Wang, L.; Chen, W.; et~al. 2022.
+\newblock Lora: Low-rank adaptation of large language models.
+\newblock \emph{ICLR}, 1(2): 3.
+
+\bibitem[{Jegou, Douze, and Schmid(2010)}]{pq}
+Jegou, H.; Douze, M.; and Schmid, C. 2010.
+\newblock Product quantization for nearest neighbor search.
+\newblock \emph{IEEE transactions on pattern analysis and machine intelligence}, 33(1): 117--128.
+
+\bibitem[{Jia et~al.(2025)Jia, Gao, Xue, Wang, Cai, Chen, Zhao, Jiang, and Gai}]{sidsurvey}
+Jia, J.; Gao, J.; Xue, B.; Wang, J.; Cai, Q.; Chen, Q.; Zhao, X.; Jiang, P.; and Gai, K. 2025.
+\newblock From principles to applications: A comprehensive survey of discrete tokenizers in generation, comprehension, recommendation, and information retrieval.
+\newblock \emph{arXiv preprint arXiv:2502.12448}.
+
+\bibitem[{Kang and McAuley(2018)}]{sasrec}
+Kang, W.-C.; and McAuley, J. 2018.
+\newblock Self-attentive sequential recommendation.
+\newblock In \emph{2018 IEEE international conference on data mining (ICDM)}, 197--206. IEEE.
+
+\bibitem[{Lee et~al.(2022)Lee, Kim, Kim, Cho, and Han}]{rqvae}
+Lee, D.; Kim, C.; Kim, S.; Cho, M.; and Han, W.-S. 2022.
+\newblock Autoregressive image generation using residual quantization.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, 11523--11532.
+
+\bibitem[{Li et~al.(2025)Li, Zhang, Zhang, Yin, Yin, and Lin}]{li2025semantic}
+Li, G.; Zhang, X.; Zhang, Y.; Yin, Y.; Yin, G.; and Lin, W. 2025.
+\newblock Semantic convergence: Harmonizing recommender systems via two-stage alignment and behavioral semantic tokenization.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial Intelligence}, volume~39, 12040--12048.
+
+\bibitem[{Li and Karahanna(2015)}]{e-com}
+Li, S.~S.; and Karahanna, E. 2015.
+\newblock Online recommendation systems in a B2C E-commerce context: a review and future directions.
+\newblock \emph{Journal of the association for information systems}, 16(2): 2.
+
+\bibitem[{Li et~al.(2023)Li, Ma, Wang, Huang, Jiang, Zheng, Xie, Huang, and Jiang}]{ecomgpt}
+Li, Y.; Ma, S.; Wang, X.; Huang, S.; Jiang, C.; Zheng, H.-T.; Xie, P.; Huang, F.; and Jiang, Y. 2023.
+\newblock EcomGPT: Instruction-tuning Large Language Models with Chain-of-Task Tasks for E-commerce.
+\newblock arXiv:2308.06966.
+
+\bibitem[{Liao et~al.(2024)Liao, Li, Yang, Wu, Yuan, Wang, and He}]{llara}
+Liao, J.; Li, S.; Yang, Z.; Wu, J.; Yuan, Y.; Wang, X.; and He, X. 2024.
+\newblock Llara: Large language-recommendation assistant.
+\newblock In \emph{Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval}, 1785--1795.
+
+\bibitem[{Lubos, Felfernig, and Tautschnig(2023)}]{vedio}
+Lubos, S.; Felfernig, A.; and Tautschnig, M. 2023.
+\newblock An overview of video recommender systems: state-of-the-art and research issues.
+\newblock \emph{Frontiers in big Data}, 6: 1281614.
+
+\bibitem[{Ma, Kang, and Liu(2019)}]{hgn}
+Ma, C.; Kang, P.; and Liu, X. 2019.
+\newblock Hierarchical gating networks for sequential recommendation.
+\newblock In \emph{Proceedings of the 25th ACM SIGKDD international conference on knowledge discovery \& data mining}, 825--833.
+
+\bibitem[{Mehta and Rana(2017)}]{mf}
+Mehta, R.; and Rana, K. 2017.
+\newblock A review on matrix factorization techniques in recommender systems.
+\newblock In \emph{2017 2nd International Conference on Communication Systems, Computing and IT Applications (CSCITA)}, 269--274. IEEE.
+
+\bibitem[{Narayanan(2023)}]{social-media}
+Narayanan, A. 2023.
+\newblock Understanding social media recommendation algorithms.
+
+\bibitem[{Ni et~al.(2021)Ni, Abrego, Constant, Ma, Hall, Cer, and Yang}]{t5}
+Ni, J.; Abrego, G.~H.; Constant, N.; Ma, J.; Hall, K.~B.; Cer, D.; and Yang, Y. 2021.
+\newblock Sentence-t5: Scalable sentence encoders from pre-trained text-to-text models.
+\newblock \emph{arXiv preprint arXiv:2108.08877}.
+
+\bibitem[{Qi et~al.(2017)Qi, Yu, Wang, Liu, and Wang}]{kmeans}
+Qi, J.; Yu, Y.; Wang, L.; Liu, J.; and Wang, Y. 2017.
+\newblock An effective and efficient hierarchical K-means clustering algorithm.
+\newblock \emph{International Journal of Distributed Sensor Networks}, 13(8): 1550147717728627.
+
+\bibitem[{Qian et~al.(2025)Qian, Wang, Peng, Tan, Li, and Zeng}]{rdpo}
+Qian, W.; Wang, C.; Peng, H.; Tan, Z.; Li, H.; and Zeng, A. 2025.
+\newblock RDPO: Real Data Preference Optimization for Physics Consistency Video Generation.
+\newblock \emph{arXiv preprint arXiv:2506.18655}.
+
+\bibitem[{Rafailov et~al.(2023)Rafailov, Sharma, Mitchell, Manning, Ermon, and Finn}]{dpo}
+Rafailov, R.; Sharma, A.; Mitchell, E.; Manning, C.~D.; Ermon, S.; and Finn, C. 2023.
+\newblock Direct preference optimization: Your language model is secretly a reward model.
+\newblock \emph{Advances in Neural Information Processing Systems}, 36: 53728--53741.
+
+\bibitem[{Rajput et~al.(2023)Rajput, Mehta, Singh, Hulikal~Keshavan, Vu, Heldt, Hong, Tay, Tran, Samost et~al.}]{tiger}
+Rajput, S.; Mehta, N.; Singh, A.; Hulikal~Keshavan, R.; Vu, T.; Heldt, L.; Hong, L.; Tay, Y.; Tran, V.; Samost, J.; et~al. 2023.
+\newblock Recommender systems with generative retrieval.
+\newblock \emph{Advances in Neural Information Processing Systems}, 36: 10299--10315.
+
+\bibitem[{Si et~al.(2023)Si, Sun, Chen, Chen, Zang, Zheng, Song, Zhang, Xu, and Gai}]{genre}
+Si, Z.; Sun, Z.; Chen, J.; Chen, G.; Zang, X.; Zheng, K.; Song, Y.; Zhang, X.; Xu, J.; and Gai, K. 2023.
+\newblock Generative retrieval with semantic tree-structured item identifiers via contrastive learning.
+\newblock \emph{arXiv preprint arXiv:2309.13375}.
+
+\bibitem[{Srivastava et~al.(2025)Srivastava, Nalli, Deshpande, and Sharma}]{dpo1}
+Srivastava, P.; Nalli, S.~S.; Deshpande, A.; and Sharma, A. 2025.
+\newblock Outlier-Aware Preference Optimization for Large Language Models.
+\newblock In \emph{ICLR 2025 Workshop on Bidirectional Human-AI Alignment}.
+
+\bibitem[{Sun et~al.(2019)Sun, Liu, Wu, Pei, Lin, Ou, and Jiang}]{bert4rec}
+Sun, F.; Liu, J.; Wu, J.; Pei, C.; Lin, X.; Ou, W.; and Jiang, P. 2019.
+\newblock BERT4Rec: Sequential recommendation with bidirectional encoder representations from transformer.
+\newblock In \emph{Proceedings of the 28th ACM international conference on information and knowledge management}, 1441--1450.
+
+\bibitem[{Tan et~al.(2025)Tan, Zeng, Zeng, Wu, Liu, Mo, and Jiang}]{rf2}
+Tan, Z.; Zeng, Z.; Zeng, Q.; Wu, Z.; Liu, Z.; Mo, F.; and Jiang, M. 2025.
+\newblock Can Large Language Models Understand Preferences in Personalized Recommendation?
+\newblock \emph{arXiv preprint arXiv:2501.13391}.
+
+\bibitem[{Tang and Wang(2018)}]{caser}
+Tang, J.; and Wang, K. 2018.
+\newblock Personalized top-n sequential recommendation via convolutional sequence embedding.
+\newblock In \emph{Proceedings of the eleventh ACM international conference on web search and data mining}, 565--573.
+
+\bibitem[{Tay et~al.(2022)Tay, Tran, Dehghani, Ni, Bahri, Mehta, Qin, Hui, Zhao, Gupta et~al.}]{dsi1}
+Tay, Y.; Tran, V.; Dehghani, M.; Ni, J.; Bahri, D.; Mehta, H.; Qin, Z.; Hui, K.; Zhao, Z.; Gupta, J.; et~al. 2022.
+\newblock Transformer memory as a differentiable search index.
+\newblock \emph{Advances in Neural Information Processing Systems}, 35: 21831--21843.
+
+\bibitem[{Touvron et~al.(2023)Touvron, Martin, Stone, Albert, Almahairi, Babaei, Bashlykov, Batra, Bhargava, Bhosale et~al.}]{llama2}
+Touvron, H.; Martin, L.; Stone, K.; Albert, P.; Almahairi, A.; Babaei, Y.; Bashlykov, N.; Batra, S.; Bhargava, P.; Bhosale, S.; et~al. 2023.
+\newblock Llama 2: Open foundation and fine-tuned chat models.
+\newblock \emph{arXiv preprint arXiv:2307.09288}.
+
+\bibitem[{Wang et~al.(2025{\natexlab{a}})Wang, Liu, Sun, Ma, Wang, Ma, Su, Chen, Gao, Dalal et~al.}]{rf1}
+Wang, J.; Liu, Y.; Sun, Y.; Ma, X.; Wang, Y.; Ma, H.; Su, Z.; Chen, M.; Gao, M.; Dalal, O.; et~al. 2025{\natexlab{a}}.
+\newblock User Feedback Alignment for LLM-powered Exploration in Large-scale Recommendation Systems.
+\newblock \emph{arXiv preprint arXiv:2504.05522}.
+
+\bibitem[{Wang et~al.(2024{\natexlab{a}})Wang, Bao, Lin, Zhang, Li, Feng, Ng, and Chua}]{letter}
+Wang, W.; Bao, H.; Lin, X.; Zhang, J.; Li, Y.; Feng, F.; Ng, S.-K.; and Chua, T.-S. 2024{\natexlab{a}}.
+\newblock Learnable item tokenization for generative recommendation.
+\newblock In \emph{Proceedings of the 33rd ACM International Conference on Information and Knowledge Management}, 2400--2409.
+
+\bibitem[{Wang et~al.(2023)Wang, Lin, Feng, He, and Chua}]{gr1}
+Wang, W.; Lin, X.; Feng, F.; He, X.; and Chua, T.-S. 2023.
+\newblock Generative recommendation: Towards next-generation recommender paradigm.
+\newblock \emph{arXiv preprint arXiv:2304.03516}.
+
+\bibitem[{Wang et~al.(2024{\natexlab{b}})Wang, Xun, Hong, Zhu, Jin, Lin, Li, Li, Xia, Zhao et~al.}]{eager}
+Wang, Y.; Xun, J.; Hong, M.; Zhu, J.; Jin, T.; Lin, W.; Li, H.; Li, L.; Xia, Y.; Zhao, Z.; et~al. 2024{\natexlab{b}}.
+\newblock EAGER: Two-Stream Generative Recommender with Behavior-Semantic Collaboration.
+\newblock In \emph{Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining}, 3245--3254.
+
+\bibitem[{Wang et~al.(2025{\natexlab{b}})Wang, Lin, Yang, Liu, Feng, Wang, and Zhang}]{seLLaRec}
+Wang, Z.; Lin, J.; Yang, X.; Liu, Y.; Feng, S.; Wang, D.; and Zhang, Y. 2025{\natexlab{b}}.
+\newblock Enhancing LLM-based Recommendation through Semantic-Aligned Collaborative Knowledge.
+\newblock \emph{arXiv preprint arXiv:2504.10107}.
+
+\bibitem[{Wu et~al.(2023)Wu, Zheng, Qiu, and …}]{wu2023survey}
+Wu, L.; Zheng, Z.; Qiu, Z.; and …. 2023.
+\newblock A Survey on Large Language Models for Recommendation.
+\newblock \emph{CoRR}, abs/2305.19860.
+
+\bibitem[{Wu et~al.(2024)Wu, Sun, Yuan, Ji, Yang, and Gu}]{selfplay}
+Wu, Y.; Sun, Z.; Yuan, H.; Ji, K.; Yang, Y.; and Gu, Q. 2024.
+\newblock Self-play preference optimization for language model alignment.
+\newblock \emph{arXiv preprint arXiv:2405.00675}.
+
+\bibitem[{Yang, Tan, and Li(2025)}]{ipo}
+Yang, X.; Tan, Z.; and Li, H. 2025.
+\newblock Ipo: Iterative preference optimization for text-to-video generation.
+\newblock \emph{arXiv preprint arXiv:2502.02088}.
+
+\bibitem[{Ye et~al.(2023)Ye, Fang, Li, and Yilmaz}]{ye2023informative}
+Ye, F.; Fang, M.; Li, S.; and Yilmaz, E. 2023.
+\newblock Large Language Model-Aided Informative Query Rewriting.
+\newblock In \emph{EMNLP Findings}.
+
+\bibitem[{Ye et~al.(2025)Ye, Sun, Shi, Wang, Wu, and Jiang}]{das}
+Ye, W.; Sun, M.; Shi, S.; Wang, P.; Wu, W.; and Jiang, P. 2025.
+\newblock DAS: Dual-Aligned Semantic IDs Empowered Industrial Recommender System.
+\newblock \emph{arXiv preprint arXiv:2508.10584}.
+
+\bibitem[{Zhang et~al.(2025)Zhang, Feng, Zhang, Bao, Wang, and He}]{collm}
+Zhang, Y.; Feng, F.; Zhang, J.; Bao, K.; Wang, Q.; and He, X. 2025.
+\newblock Collm: Integrating collaborative embeddings into large language models for recommendation.
+\newblock \emph{IEEE Transactions on Knowledge and Data Engineering}.
+
+\bibitem[{Zheng et~al.(2024)Zheng, Hou, Lu, Chen, Zhao, Chen, and Wen}]{lc-rec}
+Zheng, B.; Hou, Y.; Lu, H.; Chen, Y.; Zhao, W.~X.; Chen, M.; and Wen, J.-R. 2024.
+\newblock Adapting large language models by integrating collaborative semantics for recommendation.
+\newblock In \emph{2024 IEEE 40th International Conference on Data Engineering (ICDE)}, 1435--1448. IEEE.
+
+\bibitem[{Zheng et~al.(2025)Zheng, Huang, Pedchenko, Rangadurai, Wang, Nahum, Lei, Yang, Liu, Luo et~al.}]{PNM}
+Zheng, C.; Huang, M.; Pedchenko, D.; Rangadurai, K.; Wang, S.; Nahum, G.; Lei, J.; Yang, Y.; Liu, T.; Luo, Z.; et~al. 2025.
+\newblock Enhancing Embedding Representation Stability in Recommendation Systems with Semantic ID.
+\newblock \emph{arXiv preprint arXiv:2504.02137}.
+
+\bibitem[{Zhou et~al.(2018)Zhou, Zhu, Song, Fan, Zhu, Ma, Yan, Jin, Li, and Gai}]{din}
+Zhou, G.; Zhu, X.; Song, C.; Fan, Y.; Zhu, H.; Ma, X.; Yan, Y.; Jin, J.; Li, H.; and Gai, K. 2018.
+\newblock Deep interest network for click-through rate prediction.
+\newblock In \emph{Proceedings of the 24th ACM SIGKDD international conference on knowledge discovery \& data mining}, 1059--1068.
+
+\end{thebibliography}

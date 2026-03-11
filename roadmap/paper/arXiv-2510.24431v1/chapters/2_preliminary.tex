@@ -1,0 +1,83 @@
+\section{Methods}
+\slh{
+\subsection{Item Tokenization}
+
+Following the standard item tokenization pipeline in SID-based generative recommender systems, such as TIGER \cite{TIGER} and OneRec \cite{OneRec}, we adopt RQ-VAE \cite{rqvae} as the item tokenization method. }
+For each item $i$, we concatenate its title and textual description and feed the resulting sentence into a frozen content encoder to produce a $d$-dimensional semantic vector $\mathbf{x}\in\mathbb{R}^{d}$.
+% $\mathbf{x}\in\mathbb{R}^{d}$.
+The continuous vector is then discretized with the RQ-Kmeans algorithm~\citep{rqkmeans}, which builds a hierarchy of codebooks by recursively clustering the residuals.
+
+Let $\tilde{\mathbf{M}}=[\mathbf{x}_1;\ldots;\mathbf{x}_N]\in\mathbb{R}^{N\times d}$ be the matrix that stacks the embeddings of all $N$ items.  
+We initialize $\mathbf{R}^{(1)}=\tilde{\mathbf{M}}$. For each layer $l\in\{1,\ldots,L\}$, where $L$ is the number of hierarchical levels in the semantic codebook, we learn a codebook
+$\mathbf{C}^{(l)}=\{\mathbf{c}^{(l)}_{k}\}_{k=1}^{K_l}$ by running K-means with $K_l$ centroids on the current residuals $\mathbf{R}^{(l)}$:
+\[
+\mathbf{C}^{(l)}=\text{K-means}\bigl(\mathbf{R}^{(l)},K_l\bigr).
+\]
+%
+For item $i\;(1\le i\le N)$, the index of the nearest centroid is obtained via
+\[
+s^{(l)}_{i}=\arg\min_{k}\lVert\mathbf{R}^{(l)}_{i}-\mathbf{c}^{(l)}_{k}\rVert_{2},
+\]
+where $\lVert \cdot \lVert$  denotes the Euclidean norm. The residual is updated as
+\[
+\mathbf{R}^{(l+1)}_{i}= \mathbf{R}^{(l)}_{i}-\mathbf{c}^{(l)}_{s^{(l)}_{i}}.
+\]
+After $L=3$ layers we obtain a coarse-to-fine set of semantic identifiers,
+$
+\{s^{(1)}_{i},s^{(2)}_{i},s^{(3)}_{i}\},
+$
+which serves as the unique token sequence for item $i$ and will be consumed by the recommender for progressive generation.
+
+% \begin{equation}
+    %L_{RECON} = ||e-\hat{e}||_{2}^{2}
+% \end{equation}
+
+% \begin{equation}
+% \mathcal{L}_{\mathrm{RQ}}=\sum_{i=0}^{m-1}\left\|\operatorname{sg}\left[\boldsymbol{r}_{i}\right]-\boldsymbol{e}_{c_{i}}^{i}\right\|_{2}^{2}+\beta\left\|\boldsymbol{r}_{i}-\operatorname{sg}\left[\boldsymbol{e}_{c_{i}}^{i}\right]\right\|_{2}^{2},
+% \end{equation}
+
+% \begin{equation}
+% L_{rq-vae} = L_{RECON} + L_{RQ}
+% \end{equation}
+
+
+\subsection{Model Optimization}
+
+We fine-tune our policy with the GRPO algorithm \citep{deepseekmath,deepseek}, which leverages the relative quality of multiple responses generated for the same prompt. Concretely, for each input $x\!\sim\!D$, we roll out the current policy $\pi_{\theta_{\text{old}}}$ $G$ times to obtain a set of candidates $\mathcal{Y}(x)=\{y^{(1)},\dots,y^{(G)}\}$.  Each candidate $y^{(i)}$ receives a scalar reward $R_i$, and the advantage is computed by normalizing the rewards \emph{within the group}
+\begin{equation}
+    \hat{A}_i=\frac{R_i-\operatorname{mean}(R_{1:G})}{\operatorname{std}(R_{1:G})},
+    \label{eq:grpo_adv}
+\end{equation}
+where $R_{1:G}=\{R_1,\dots,R_G\}$. This groupwise normalization recenters advantages at zero and rescales them to unit variance, thereby turning each prompt into a self-contained comparison game and reducing gradient variance.  The new policy $\pi_\theta$ maximizes the clipped surrogate
+\begin{equation}
+\begin{aligned}
+J_{\text{GRPO}}(\theta)=\;
+&\mathbb{E}_{x\sim D,\; y^{(i)}\sim\pi_{\theta_{\text{old}}}}
+\Biggl[
+\frac{1}{G}\sum_{i=1}^{G}\frac{1}{|y^{(i)}|}
+\sum_{t=1}^{|y^{(i)}|}
+\Bigl\{
+\min\!\bigl(r_{i,t}\hat{A}_{i,t},\,
+\operatorname{clip}(r_{i,t},1-\epsilon,1+\epsilon)\hat{A}_{i,t}\bigr)
+\\[4pt]
+&\qquad
+-\beta\,\mathrm{KL}\!\bigl[\pi_\theta\|\pi_{\text{ref}}\bigr]
+\Bigr\}
+\Biggr],
+\end{aligned}
+\label{eq:grpo_obj}
+\end{equation}
+where 
+$r_{i,t}=
+\tfrac{\pi_\theta(y^{(i)}_t\,|\,x,y^{(i)}_{<t})}
+      {\pi_{\theta_{\text{old}}}(y^{(i)}_t\,|\,x,y^{(i)}_{<t})}$
+is the per-token importance ratio, $\epsilon$ is the clipping threshold, and $\beta$ balances task reward against a KL penalty, keeping the updated policy close to a reference model $\pi_{\text{ref}}$.
+
+
+\subsection{Task formulation}
+Generative recommendation reformulates the recommendation problem as a sequence generation task.
+% where an autoregressive sequence model is trained to output a series of item identifiers that constitute personalized recommendations.
+Let $H_u$ denote the interaction history of user $u$, sorted in chronological order.  
+Each item $i \in H_u$ is represented by a $3$–level SID tuple $\{s^{(1)}_{i},\,s^{(2)}_{i},\,s^{(3)}_{i}\}$.  
+Given $H_u$, the generative recommender $\pi_{\theta}$, parameterized by $\theta$, is trained to predict an item $i^{\text{pos}}$ that best matches the preferences of user $u$ from the item set.  
+During inference, we employ beam search to generate the top-$k$ candidates and evaluate the model with standard generative-recommendation metrics.

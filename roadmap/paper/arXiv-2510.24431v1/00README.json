@@ -1,0 +1,153 @@
+{
+   "sources" : [
+      {
+         "usage" : "toplevel",
+         "filename" : "iclr2026/iclr2026_conference.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "backup/0_abstract.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "backup/1-intro-new.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "backup/1_introduction.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "chapters/1.5_related_work.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "chapters/2_preliminary.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "chapters/2_preliminary_new.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "chapters/3_method.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "chapters/4_experiments.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "chapters/4_experiments_new.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "chapters/5_related_work.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figures/MiniOneRec_framework.png"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figures/SINGER_framework.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figures/alphalab.jpg"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figures/lds.png"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figures/limited_understanding.png"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figures/llmmatter.png"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figures/logo.png"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figures/logov2.png"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figures/logov3.png"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figures/logov4.png"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figures/logov5.png"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figures/newlogo.png"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figures/next.jpg"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figures/pie.png"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figures/scaling.png"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figures/sft_vs_sft_rl.png"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "figures/sid_his2title.png"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "iclr2026/iclr2026_conference.bib"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "iclr2026/iclr2026_conference.bst"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "iclr2026/iclr2026_conference.sty"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "iclr2026/math_commands.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "iclr2026_conference.bbl"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "iclr2026_conference.bib"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "iclr2026_conference.bst"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "iclr2026_conference.tex"
+      }
+   ],
+   "spec_version" : 1,
+   "texlive_version" : "2025",
+   "process" : {
+      "compiler" : "pdflatex"
+   }
+}

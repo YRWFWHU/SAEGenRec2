@@ -1,0 +1,268 @@
+\documentclass{article} % For LaTeX2e
+\usepackage{iclr2026_conference,times}
+
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\definecolor{abstractbg}{RGB}{235, 245, 255} 
+\definecolor{metafg}{HTML}{1C2B33}
+
+\tcbset{
+  enhanced,
+  colback=abstractbg,      % ✅ 背景色
+  colframe=metafg,     % ✅ 边框颜色同背景
+  boxrule=0pt,             % ✅ 去掉边线
+  frame hidden,            % ✅ 彻底隐藏边框（双保险）
+  arc=8pt,                 % ✅ 圆角更大（可调 10pt、12pt）
+  left=0pt,right=0pt,top=6pt,bottom=6pt,
+  before skip=8pt, after skip=12pt,
+  % 可选：长摘要自动分页
+  % breakable,
+}
+
+\newenvironment{boxedabstract}
+{\begin{tcolorbox}\begin{abstract}}
+{\end{abstract}\end{tcolorbox}}
+
+
+% Optional math commands from https://github.com/goodfeli/dlbook_notation.
+\input{math_commands.tex}
+
+
+\usepackage{multirow}
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage{url}            % simple URL typesetting
+\usepackage{tabularx} 
+\usepackage{array}
+\renewcommand{\arraystretch}{1.1}
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{xcolor}         % colors
+
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+
+\definecolor{metablue}{HTML}{0064E0}
+
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{makecell}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{thm-restate}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{bbm}
+\usepackage{bm}
+\usepackage{bbding} 
+
+% new packages
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{multirow}
+\usepackage{tcolorbox}
+\usepackage{adjustbox} 
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+
+\RequirePackage{hyperref}
+\RequirePackage[noabbrev,nameinlink]{cleveref}
+\hypersetup{
+  colorlinks,
+  linkcolor=metablue,
+  citecolor=metablue,
+  urlcolor=metablue
+}
+
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+\newcommand{\Lapl}{\mathbf{\mathop{\mathcal{L}}}}
+\newcommand{\lapl}{\mathcal{L}}
+\newcommand{\Trans}[1]{{#1}^{\top}}
+\newcommand{\Trace}[1]{tr\left({#1}\right)}
+\newcommand{\Bracs}[1]{\left({#1}\right)}
+\newcommand{\Mat}[1]{\mathbf{#1}}
+\newcommand{\MatS}[3]{\mathbf{#1}^{#2}_{#3}}
+\newcommand{\Space}[1]{\mathbb{#1}}
+\newcommand{\Set}[1]{\mathcal{#1}}
+\newcommand{\vectornorm}[1]{\left|\left|#1\right|\right|}
+\newcommand{\bpi}{\boldsymbol{\pi}}
+\newcommand{\BlockMat}[2]{\left[\begin{matrix}#1\\#2\end{matrix}\right]}
+\newcommand{\BlockMatSquare}[4]{\left[\begin{matrix}#1 & #2\\#3 & #4\end{matrix}\right]}
+\newcommand{\ParaTitle}[1]{\noindent\textbf{#1}}
+\newcommand\myeq{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny def}}}{=}}}
+\newcommand\eqc{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily c}}}{=}}}
+
+
+\newcommand{\ie}{\emph{i.e., }}
+\newcommand{\eg}{\emph{e.g., }}
+\newcommand{\etal}{\emph{et al.}}
+\newcommand{\st}{\emph{s.t. }}
+\newcommand{\etc}{\emph{etc.}}
+\newcommand{\wrt}{\emph{w.r.t.}~}
+\newcommand{\cf}{\emph{cf. }}
+\newcommand{\aka}{\emph{aka. }}
+\newcommand{\token}[1]{\texttt{\textless#1\textgreater}}
+
+\newcommand{\email}[1]{\href{mailto:#1}{\texttt{#1}}}
+
+\newcommand{\wx}[1]{{\color{blue}{#1}}}
+\newcommand{\za}[1]{{\color{black}{#1}}}
+\newcommand{\kxy}[1]{{\color{black}{#1}}}
+\newcommand{\tjf}[1]{{\color{black}{#1}}}
+\newcommand{\wjc}[1]{{\color{black}{#1}}}
+\newcommand{\slh}[1]{{\color{black}{#1}}}
+\usepackage{fontawesome} 
+
+%% 页眉
+%% 页眉
+
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+
+\newcommand{\HeaderIconHeight}{12.3pt}
+\newcommand{\CornerIconHeight}{27pt} % 角标尺寸（可改 14–18pt）
+% 在导言区新增
+\newcommand{\NextIconHeight}{13pt}
+\newcommand{\AlphaIconHeight}{12pt}
+\newcommand{\LdsIconHeight}{14.5pt}
+
+\newcommand{\CornerRaise}{1.2pt}       % 角标上抬
+\newcommand{\CornerGapA}{4pt}        % next 与 alphalab 间距
+\newcommand{\CornerGapB}{4pt}        % alphalab 与 lds 间距
+
+\setlength{\headheight}{\HeaderIconHeight}
+\pagestyle{fancy}
+\addtolength{\headsep}{-27pt}
+\fancyhf{}
+
+% 图标放页眉（偶数页左、奇数页右）
+\fancyhead[LO,RE]{%
+  \raisebox{0pt}[0pt][0pt]{\includegraphics[height=\HeaderIconHeight]{figures/logov6.png}}%
+}
+
+% % 外侧角：next.jpg（最外侧）— alphalab.png — lds.png（最内侧）
+% \fancyhead[RO,LE]{%
+%   \raisebox{\CornerRaise}[0pt][0pt]{%
+%     \includegraphics[height=\LdsIconHeight]{figures/lds.png}%
+%     \hspace{\CornerGapA}%
+%     \includegraphics[height=\AlphaIconHeight]{figures/alphalab.jpg}%
+%     \hspace{\CornerGapB}%
+%     \includegraphics[height=\NextIconHeight]{figures/next.jpg}%
+%   }%
+% }
+
+% 打开页眉横线（调整粗细）
+\renewcommand{\headrulewidth}{1pt}
+\newcommand{\HeadRuleRaise}{0pt} % 想更高就调大些
+\makeatletter
+\renewcommand{\headrule}{%
+  \vspace*{-\HeadRuleRaise}% 往上抬
+  \hrule height \headrulewidth \@width\headwidth
+  \vspace*{-\headrulewidth}% 保持竖向占位
+}
+\makeatother
+
+\fancyfoot[C]{\thepage}
+
+% 首页（plain）同款设置 + 横线
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyhead[LO,RE]{%
+    \raisebox{0pt}[0pt][0pt]{\includegraphics[height=\HeaderIconHeight]{figures/logov6.png}}%
+  }
+  % % plain 里也加角落：next — alphalab — lds
+  % \fancyhead[RO,LE]{%
+  %   \raisebox{\CornerRaise}[0pt][0pt]{%
+  %     \includegraphics[height=\LdsIconHeight]{figures/lds.png}%
+  %     \hspace{\CornerGapA}%
+  %     \includegraphics[height=\AlphaIconHeight]{figures/alphalab.png}%
+  %     \hspace{\CornerGapB}%
+  %     \includegraphics[height=\NextIconHeight]{figures/next.jpg}%
+  %   }%
+  % }
+
+  \renewcommand{\headrulewidth}{0.4pt}%
+  \makeatletter
+  \renewcommand{\headrule}{%
+    \vspace*{-\HeadRuleRaise}%
+    \hrule height \headrulewidth \@width\headwidth
+    \vspace*{-\headrulewidth}%
+  }
+  \makeatother
+
+  \fancyfoot[C]{\thepage}
+}
+
+
+\title{MiniOneRec: An Open-Source Framework for \\Scaling Generative Recommendation}
+
+% Authors must not appear in the submitted version. They should be hidden
+% as long as the \iclrfinalcopy macro remains commented out below.
+% Non-anonymous submissions will be rejected without review.
+
+\author{\textbf{Xiaoyu Kong}$^{\star}$,\quad\textbf{Leheng Sheng}$^{\circ}$,\quad\textbf{Junfei Tan}$^{\star}$,\quad\textbf{Yuxin Chen}$^{\circ}$,\\
+\textbf{Jiancan Wu}$^{\star}$,\quad\textbf{An Zhang}$^{\star}$,\quad\textbf{Xiang Wang}$^{\star}$,\quad\textbf{Xiangnan He}$^{\star}$\\
+  $^\star$University of Science and Technology of China~~
+  $^\circ$National University of Singapore\\
+  \email{\{kongxy,sober\_clever\}@mail.ustc.edu.com},\\
+  %\email{\{wujcan,an.zhang3.14\}@gmail.com},\\
+  \email{\{leheng.sheng,yuxin.chen\}@u.nus.edu},\\
+  \email{\{wujcan,an.zhang3.14,xiangwang1223,xiangnanhe\}@gmail.com}
+  % ,\quad
+  % \email{xiangnanhe@gmail.com}
+}
+
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+\iclrfinalcopy % Uncomment for camera-ready version, but NOT for submission.
+\begin{document}
+
+
+\maketitle
+
+
+\input{chapters/0_abstract-new2}
+\input{chapters/1_introduction-new2}
+
+% \input{chapters/1-intro-new}
+% \input{chapters/1_introduction}
+\input{chapters/1.5_related_work_rewrite}
+% \input{chapters/2_preliminary}
+\input{chapters/2_preliminary_new_rewrite}
+% \input{chapters/3_method}
+% \input{chapters/4_experiments}
+\input{chapters/4_experiments_new_rewrite}
+% \input{chapters/5_related_work}
+\input{chapters/6_conclusion}
+
+
+% \newpage
+
+% \input{chapters/8_checklist}
+
+\newpage
+\bibliographystyle{unsrtnat}
+\bibliography{iclr2026_conference}
+
+\input{chapters/7_appendix}
+
+
+\end{document}

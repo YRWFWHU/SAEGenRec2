@@ -1,0 +1,703 @@
+
+% Journals
+
+% First the Full Name is given, then the abbreviation used in the AMS Math
+% Reviews, with an indication if it could not be found there.
+% Note the 2nd overwrites the 1st, so swap them if you want the full name.
+
+ %{AMS}
+ @String{AMSTrans = "American Mathematical Society Translations" }
+ @String{AMSTrans = "Amer. Math. Soc. Transl." }
+ @String{BullAMS = "Bulletin of the American Mathematical Society" }
+ @String{BullAMS = "Bull. Amer. Math. Soc." }
+ @String{ProcAMS = "Proceedings of the American Mathematical Society" }
+ @String{ProcAMS = "Proc. Amer. Math. Soc." }
+ @String{TransAMS = "Transactions of the American Mathematical Society" }
+ @String{TransAMS = "Trans. Amer. Math. Soc." }
+
+ %ACM
+ @String{CACM = "Communications of the {ACM}" }
+ @String{CACM = "Commun. {ACM}" }
+ @String{CompServ = "Comput. Surveys" }
+ @String{JACM = "J. ACM" }
+ @String{ACMMathSoft = "{ACM} Transactions on Mathematical Software" }
+ @String{ACMMathSoft = "{ACM} Trans. Math. Software" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newsletter" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newslett." }
+
+ @String{AmerSocio = "American Journal of Sociology" }
+ @String{AmerStatAssoc = "Journal of the American Statistical Association" }
+ @String{AmerStatAssoc = "J. Amer. Statist. Assoc." }
+ @String{ApplMathComp = "Applied Mathematics and Computation" }
+ @String{ApplMathComp = "Appl. Math. Comput." }
+ @String{AmerMathMonthly = "American Mathematical Monthly" }
+ @String{AmerMathMonthly = "Amer. Math. Monthly" }
+ @String{BIT = "{BIT}" }
+ @String{BritStatPsych = "British Journal of Mathematical and Statistical
+          Psychology" }
+ @String{BritStatPsych = "Brit. J. Math. Statist. Psych." }
+ @String{CanMathBull = "Canadian Mathematical Bulletin" }
+ @String{CanMathBull = "Canad. Math. Bull." }
+ @String{CompApplMath = "Journal of Computational and Applied Mathematics" }
+ @String{CompApplMath = "J. Comput. Appl. Math." }
+ @String{CompPhys = "Journal of Computational Physics" }
+ @String{CompPhys = "J. Comput. Phys." }
+ @String{CompStruct = "Computers and Structures" }
+ @String{CompStruct = "Comput. \& Structures" }
+ @String{CompJour = "The Computer Journal" }
+ @String{CompJour = "Comput. J." }
+ @String{CompSysSci = "Journal of Computer and System Sciences" }
+ @String{CompSysSci = "J. Comput. System Sci." }
+ @String{Computing = "Computing" }
+ @String{ContempMath = "Contemporary Mathematics" }
+ @String{ContempMath = "Contemp. Math." }
+ @String{Crelle = "Crelle's Journal" }
+ @String{GiornaleMath = "Giornale di Mathematiche" }
+ @String{GiornaleMath = "Giorn. Mat." } % didn't find in AMS MR., ibid.
+
+ %IEEE
+ @String{Computer = "{IEEE} Computer" }
+ @String{IEEETransComp = "{IEEE} Transactions on Computers" }
+ @String{IEEETransComp = "{IEEE} Trans. Comput." }
+ @String{IEEETransAC = "{IEEE} Transactions on Automatic Control" }
+ @String{IEEETransAC = "{IEEE} Trans. Automat. Control" }
+ @String{IEEESpec = "{IEEE} Spectrum" } % didn't find in AMS MR
+ @String{ProcIEEE = "Proceedings of the {IEEE}" }
+ @String{ProcIEEE = "Proc. {IEEE}" } % didn't find in AMS MR
+ @String{IEEETransAeroElec = "{IEEE} Transactions on Aerospace and Electronic
+     Systems" }
+ @String{IEEETransAeroElec = "{IEEE} Trans. Aerospace Electron. Systems" }
+
+ @String{IMANumerAna = "{IMA} Journal of Numerical Analysis" }
+ @String{IMANumerAna = "{IMA} J. Numer. Anal." }
+ @String{InfProcLet = "Information Processing Letters" }
+ @String{InfProcLet = "Inform. Process. Lett." }
+ @String{InstMathApp = "Journal of the Institute of Mathematics and
+     its Applications" }
+ @String{InstMathApp = "J. Inst. Math. Appl." }
+ @String{IntControl = "International Journal of Control" }
+ @String{IntControl = "Internat. J. Control" }
+ @String{IntNumerEng = "International Journal for Numerical Methods in
+     Engineering" }
+ @String{IntNumerEng = "Internat. J. Numer. Methods Engrg." }
+ @String{IntSuper = "International Journal of Supercomputing Applications" }
+ @String{IntSuper = "Internat. J. Supercomputing Applic." } % didn't find
+%% in AMS MR
+ @String{Kibernetika = "Kibernetika" }
+ @String{JResNatBurStand = "Journal of Research of the National Bureau
+     of Standards" }
+ @String{JResNatBurStand = "J. Res. Nat. Bur. Standards" }
+ @String{LinAlgApp = "Linear Algebra and its Applications" }
+ @String{LinAlgApp = "Linear Algebra Appl." }
+ @String{MathAnaAppl = "Journal of Mathematical Analysis and Applications" }
+ @String{MathAnaAppl = "J. Math. Anal. Appl." }
+ @String{MathAnnalen = "Mathematische Annalen" }
+ @String{MathAnnalen = "Math. Ann." }
+ @String{MathPhys = "Journal of Mathematical Physics" }
+ @String{MathPhys = "J. Math. Phys." }
+ @String{MathComp = "Mathematics of Computation" }
+ @String{MathComp = "Math. Comp." }
+ @String{MathScand = "Mathematica Scandinavica" }
+ @String{MathScand = "Math. Scand." }
+ @String{TablesAidsComp = "Mathematical Tables and Other Aids to Computation" }
+ @String{TablesAidsComp = "Math. Tables Aids Comput." }
+ @String{NumerMath = "Numerische Mathematik" }
+ @String{NumerMath = "Numer. Math." }
+ @String{PacificMath = "Pacific Journal of Mathematics" }
+ @String{PacificMath = "Pacific J. Math." }
+ @String{ParDistComp = "Journal of Parallel and Distributed Computing" }
+ @String{ParDistComp = "J. Parallel and Distrib. Comput." } % didn't find
+%% in AMS MR
+ @String{ParComputing = "Parallel Computing" }
+ @String{ParComputing = "Parallel Comput." }
+ @String{PhilMag = "Philosophical Magazine" }
+ @String{PhilMag = "Philos. Mag." }
+ @String{ProcNAS = "Proceedings of the National Academy of Sciences
+                    of the USA" }
+ @String{ProcNAS = "Proc. Nat. Acad. Sci. U. S. A." }
+ @String{Psychometrika = "Psychometrika" }
+ @String{QuartMath = "Quarterly Journal of Mathematics, Oxford, Series (2)" }
+ @String{QuartMath = "Quart. J. Math. Oxford Ser. (2)" }
+ @String{QuartApplMath = "Quarterly of Applied Mathematics" }
+ @String{QuartApplMath = "Quart. Appl. Math." }
+ @String{RevueInstStat = "Review of the International Statisical Institute" }
+ @String{RevueInstStat = "Rev. Inst. Internat. Statist." }
+
+ %SIAM
+ @String{JSIAM = "Journal of the Society for Industrial and Applied
+     Mathematics" }
+ @String{JSIAM = "J. Soc. Indust. Appl. Math." }
+ @String{JSIAMB = "Journal of the Society for Industrial and Applied
+     Mathematics, Series B, Numerical Analysis" }
+ @String{JSIAMB = "J. Soc. Indust. Appl. Math. Ser. B Numer. Anal." }
+ @String{SIAMAlgMeth = "{SIAM} Journal on Algebraic and Discrete Methods" }
+ @String{SIAMAlgMeth = "{SIAM} J. Algebraic Discrete Methods" }
+ @String{SIAMAppMath = "{SIAM} Journal on Applied Mathematics" }
+ @String{SIAMAppMath = "{SIAM} J. Appl. Math." }
+ @String{SIAMComp = "{SIAM} Journal on Computing" }
+ @String{SIAMComp = "{SIAM} J. Comput." }
+ @String{SIAMMatrix = "{SIAM} Journal on Matrix Analysis and Applications" }
+ @String{SIAMMatrix = "{SIAM} J. Matrix Anal. Appl." }
+ @String{SIAMNumAnal = "{SIAM} Journal on Numerical Analysis" }
+ @String{SIAMNumAnal = "{SIAM} J. Numer. Anal." }
+ @String{SIAMReview = "{SIAM} Review" }
+ @String{SIAMReview = "{SIAM} Rev." }
+ @String{SIAMSciStat = "{SIAM} Journal on Scientific and Statistical
+     Computing" }
+ @String{SIAMSciStat = "{SIAM} J. Sci. Statist. Comput." }
+
+ @String{SoftPracExp = "Software Practice and Experience" }
+ @String{SoftPracExp = "Software Prac. Experience" } % didn't find in AMS MR
+ @String{StatScience = "Statistical Science" }
+ @String{StatScience = "Statist. Sci." }
+ @String{Techno = "Technometrics" }
+ @String{USSRCompMathPhys = "{USSR} Computational Mathematics and Mathematical
+     Physics" }
+ @String{USSRCompMathPhys = "{U. S. S. R.} Comput. Math. and Math. Phys." }
+ @String{VLSICompSys = "Journal of {VLSI} and Computer Systems" }
+ @String{VLSICompSys = "J. {VLSI} Comput. Syst." }
+ @String{ZAngewMathMech = "Zeitschrift fur Angewandte Mathematik und
+     Mechanik" }
+ @String{ZAngewMathMech = "Z. Angew. Math. Mech." }
+ @String{ZAngewMathPhys = "Zeitschrift fur Angewandte Mathematik und Physik" }
+ @String{ZAngewMathPhys = "Z. Angew. Math. Phys." }
+
+% Publishers % ================================================= |
+
+ @String{Academic = "Academic Press" }
+ @String{ACMPress = "{ACM} Press" }
+ @String{AdamHilger = "Adam Hilger" }
+ @String{AddisonWesley = "Addison-Wesley" }
+ @String{AllynBacon = "Allyn and Bacon" }
+ @String{AMS = "American Mathematical Society" }
+ @String{Birkhauser = "Birkh{\"a}user" }
+ @String{CambridgePress = "Cambridge University Press" }
+ @String{Chelsea = "Chelsea" }
+ @String{ClaredonPress = "Claredon Press" }
+ @String{DoverPub = "Dover Publications" }
+ @String{Eyolles = "Eyolles" }
+ @String{HoltRinehartWinston = "Holt, Rinehart and Winston" }
+ @String{Interscience = "Interscience" }
+ @String{JohnsHopkinsPress = "The Johns Hopkins University Press" }
+ @String{JohnWileySons = "John Wiley and Sons" }
+ @String{Macmillan = "Macmillan" }
+ @String{MathWorks = "The Math Works Inc." }
+ @String{McGrawHill = "McGraw-Hill" }
+ @String{NatBurStd = "National Bureau of Standards" }
+ @String{NorthHolland = "North-Holland" }
+ @String{OxfordPress = "Oxford University Press" }  %address Oxford or London?
+ @String{PergamonPress = "Pergamon Press" }
+ @String{PlenumPress = "Plenum Press" }
+ @String{PrenticeHall = "Prentice-Hall" }
+ @String{SIAMPub = "{SIAM} Publications" }
+ @String{Springer = "Springer-Verlag" }
+ @String{TexasPress = "University of Texas Press" }
+ @String{VanNostrand = "Van Nostrand" }
+ @String{WHFreeman = "W. H. Freeman and Co." }
+
+%Entries
+@inproceedings{TIGER,
+author = {Rajput, Shashank and Mehta, Nikhil and Singh, Anima and Keshavan, Raghunandan and Vu, Trung and Heidt, Lukasz and Hong, Lichan and Tay, Yi and Tran, Vinh Q. and Samost, Jonah and Kula, Maciej and Chi, Ed H. and Sathiamoorthy, Maheswaran},
+title = {Recommender systems with generative retrieval},
+year = {2023},
+publisher = {Curran Associates Inc.},
+address = {Red Hook, NY, USA},
+booktitle = {Proceedings of the 37th International Conference on Neural Information Processing Systems},
+articleno = {452},
+numpages = {17},
+location = {New Orleans, LA, USA},
+series = {NIPS '23}
+}
+
+@inproceedings{GeneRec,
+author = {Wang, Wenjie and Lin, Xinyu and Feng, Fuli and He, Xiangnan and Chua, Tat-Seng},
+title = {Generative Recommendation: Towards Personalized Multimodal Content Generation},
+year = {2025},
+isbn = {9798400713316},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+booktitle = {Companion Proceedings of the ACM on Web Conference 2025},
+pages = {2421–2425},
+numpages = {5},
+keywords = {generative recommender paradigm, personalized aigc, personalized multimodal content generation},
+location = {Sydney NSW, Australia},
+series = {WWW '25}
+}
+
+@inproceedings{hou2025generative,
+title={Generative Recommendation Models: Progress and Directions},
+author={Hou, Yupeng and Zhang, An and Sheng, Leheng and Yang, Zhengyi and Wang, Xiang and Chua, Tat-Seng and McAuley, Julian},
+booktitle={Companion Proceedings of the ACM on Web Conference 2025},
+pages={13-16},
+year={2025}
+}
+
+@article{kuaishou_survey,
+title={A Survey of Generative Recommendation from a Tri-Decoupled Perspective: Tokenization, Architecture, and Optimization},
+author={Li, Xiaopeng and Chen, Bo and She, Junda and Cao, Shiteng and Wang, You and Jia, Qinlin and He, Haiying and Zhou, Zheli and Liu, Zhao and Liu, Ji and others},
+year={2025},
+publisher={Preprints}
+}
+
+@inproceedings{li-etal-2024-large,
+title = "Large Language Models for Generative Recommendation: A Survey and Visionary Discussions",
+author = "Li, Lei  and
+  Zhang, Yongfeng  and
+  Liu, Dugang  and
+  Chen, Li",
+booktitle = "Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)",
+month = may,
+year = "2024",
+address = "Torino, Italia",
+publisher = "ELRA and ICCL",
+pages = "10146-10159",
+}
+
+@article{Onerec-v2,
+title={Onerec-v2 technical report},
+author={Zhou, Guorui and Hu, Hengrui and Cheng, Hongtao and Wang, Huanjie and Deng, Jiaxin and Zhang, Jinghao and Cai, Kuo and Ren, Lejian and Ren, Lu and Yu, Liao and others},
+journal={arXiv preprint arXiv:2508.20900},
+year={2025}
+}
+
+@inproceedings{MTGR,
+author = {Han, Ruidong and Yin, Bin and Chen, Shangyu and Jiang, He and Jiang, Fei and Li, Xiang and Ma, Chi and Huang, Mincong and Li, Xiaoguang and Jing, Chunzhen and Han, Yueming and Zhou, MengLei and Yu, Lei and Liu, Chuan and Lin, Wei},
+title = {MTGR: Industrial-Scale Generative Recommendation Framework in Meituan},
+year = {2025},
+isbn = {9798400720406},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+booktitle = {Proceedings of the 34th ACM International Conference on Information and Knowledge Management},
+pages = {5731–5738},
+numpages = {8},
+keywords = {generative recommendation, scaling law},
+location = {Seoul, Republic of Korea},
+series = {CIKM '25}
+}
+
+@article{OnePiece,
+title={OnePiece: The Great Route to Generative Recommendation--A Case Study from Tencent Algorithm Competition},
+author={Cao, Jiangxia and Yang, Shuo and Wang, Zijun and Tan, Qinghai},
+journal={arXiv preprint arXiv:2512.07424},
+year={2025}
+}
+
+@inproceedings{RankMixer,
+author = {Zhu, Jie and Fan, Zhifang and Zhu, Xiaoxie and Jiang, Yuchen and Wang, Hangyu and Han, Xintian and Ding, Haoran and Wang, Xinmin and Zhao, Wenlin and Gong, Zhen and Yang, Huizhi and Chai, Zheng and Chen, Zhe and Zheng, Yuchao and Chen, Qiwei and Zhang, Feng and Zhou, Xun and Xu, Peng and Yang, Xiao and Wu, Di and Liu, Zuotao},
+title = {RankMixer: Scaling Up Ranking Models in Industrial Recommenders},
+year = {2025},
+isbn = {9798400720406},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+booktitle = {Proceedings of the 34th ACM International Conference on Information and Knowledge Management},
+pages = {6309–6316},
+numpages = {8},
+keywords = {ranking model, recommender system, scaling laws},
+location = {Seoul, Republic of Korea},
+series = {CIKM '25}
+}
+
+@inproceedings{Trinity,
+author = {Yan, Jing and Jiang, Liu and Cui, Jianfei and Zhao, Zhichen and Bin, Xingyan and Zhang, Feng and Liu, Zuotao},
+title = {Trinity: Syncretizing Multi-/Long-Tail/Long-Term Interests All in One},
+year = {2024},
+isbn = {9798400704901},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+booktitle = {Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining},
+pages = {6095–6104},
+numpages = {10},
+keywords = {interest amnesia, interest modeling, statistical method},
+location = {Barcelona, Spain},
+series = {KDD '24}
+}
+
+@inproceedings{StreamingVQ,
+author = {Bin, Xingyan and Cui, Jianfei and Yan, Wujie and Zhao, Zhichen and Han, Xintian and Yan, Chongyang and Zhang, Feng and Zhou, Xun and Yang, Xiao and Liu, Zuotao},
+title = {Real-time Indexing for Large-scale Recommendation by Streaming Vector Quantization Retriever},
+year = {2025},
+isbn = {9798400714542},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+booktitle = {Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2},
+pages = {4273–4283},
+numpages = {11},
+keywords = {index structure, real-time assignment, retrieval method},
+location = {Toronto ON, Canada},
+series = {KDD '25}
+}
+
+@inproceedings{RPG,
+author = {Hou, Yupeng and Li, Jiacheng and Shin, Ashley and Jeon, Jinsung and Santhanam, Abhishek and Shao, Wei and Hassani, Kaveh and Yao, Ning and McAuley, Julian},
+title = {Generating Long Semantic IDs in Parallel for Recommendation},
+year = {2025},
+isbn = {9798400714542},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+booktitle = {Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2},
+pages = {956–966},
+numpages = {11},
+keywords = {semantic id, sequential recommendation},
+location = {Toronto ON, Canada},
+series = {KDD '25}
+}
+
+@inproceedings{LETTER,
+author = {Wang, Wenjie and Bao, Honghui and Lin, Xinyu and Zhang, Jizhi and Li, Yongqi and Feng, Fuli and Ng, See-Kiong and Chua, Tat-Seng},
+title = {Learnable Item Tokenization for Generative Recommendation},
+year = {2024},
+isbn = {9798400704369},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+booktitle = {Proceedings of the 33rd ACM International Conference on Information and Knowledge Management},
+pages = {2400–2409},
+numpages = {10},
+keywords = {LLMs for recommendation, generative recommendation, item tokenization, learnable tokenizer},
+location = {Boise, ID, USA},
+series = {CIKM '24}
+}
+
+@inproceedings{IDGenRec,
+author = {Tan, Juntao and Xu, Shuyuan and Hua, Wenyue and Ge, Yingqiang and Li, Zelong and Zhang, Yongfeng},
+title = {IDGenRec: LLM-RecSys Alignment with Textual ID Learning},
+year = {2024},
+isbn = {9798400704314},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+booktitle = {Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+pages = {355–364},
+numpages = {10},
+keywords = {natural language processing, recommender system},
+location = {Washington DC, USA},
+series = {SIGIR '24}
+}
+
+@inproceedings{SEATER,
+author = {Si, Zihua and Sun, Zhongxiang and Chen, Jiale and Chen, Guozhang and Zang, Xiaoxue and Zheng, Kai and Song, Yang and Zhang, Xiao and Xu, Jun and Gai, Kun},
+title = {Generative Retrieval with Semantic Tree-Structured Identifiers and Contrastive Learning},
+year = {2024},
+isbn = {9798400707247},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+booktitle = {Proceedings of the 2024 Annual International ACM SIGIR Conference on Research and Development in Information Retrieval in the Asia Pacific Region},
+pages = {154–163},
+numpages = {10},
+keywords = {contrastive learning, generative retrieval, recommendation},
+location = {Tokyo, Japan},
+series = {SIGIR-AP 2024}
+}
+
+@inproceedings{EAGER,
+author = {Wang, Ye and Xun, Jiahao and Hong, Minjie and Zhu, Jieming and Jin, Tao and Lin, Wang and Li, Haoyuan and Li, Linjun and Xia, Yan and Zhao, Zhou and Dong, Zhenhua},
+title = {EAGER: Two-Stream Generative Recommender with Behavior-Semantic Collaboration},
+year = {2024},
+isbn = {9798400704901},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+booktitle = {Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining},
+pages = {3245–3254},
+numpages = {10},
+keywords = {haoyuan li, jiahao xun, jieming zhu, linjun li, mingjie hong, tao jin, wang lin, yan xia, ye wang, zhenhua dong., zhou zhao},
+location = {Barcelona, Spain},
+series = {KDD '24}
+}
+
+@article{DiscRec,
+title={DiscRec: Disentangled Semantic-Collaborative Modeling for Generative Recommendation},
+author={Liu, Chang and Bai, Yimeng and Zhao, Xiaoyan and Zhang, Yang and Feng, Fuli and Rong, Wenge},
+journal={arXiv preprint arXiv:2506.15576},
+year={2025}
+}
+
+@inproceedings{LC-Rec,
+author={Zheng, Bowen and Hou, Yupeng and Lu, Hongyu and Chen, Yu and Zhao, Wayne Xin and Chen, Ming and Wen, Ji-Rong},
+booktitle={2024 IEEE 40th International Conference on Data Engineering (ICDE)}, 
+title={Adapting Large Language Models by Integrating Collaborative Semantics for Recommendation}, 
+year={2024},
+volume={},
+number={},
+pages={1435-1448},
+keywords={Adaptation models;Vocabulary;Vector quantization;Large language models;Semantics;Collaboration;Task analysis;Large Language Model;Semantic Integration;Sequential Recommendation},
+}
+
+
+@inproceedings{ETEGRec,
+author = {Liu, Enze and Zheng, Bowen and Ling, Cheng and Hu, Lantao and Li, Han and Zhao, Wayne Xin},
+title = {Generative Recommender with End-to-End Learnable Item Tokenization},
+year = {2025},
+isbn = {9798400715921},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+booktitle = {Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+pages = {729–739},
+numpages = {11},
+keywords = {generative recommendation, item tokenization},
+location = {Padua, Italy},
+series = {SIGIR '25}
+}
+
+@article{BLOGER,
+title={Bi-Level Optimization for Generative Recommendation: Bridging Tokenization and Generation},
+author={Bai, Yimeng and Liu, Chang and Zhang, Yang and Wang, Dingxian and Yang, Frank and Rabinovich, Andrew and Rong, Wenge and Feng, Fuli},
+journal={arXiv preprint arXiv:2510.21242},
+year={2025}
+}
+
+@article{MMQ,
+title={MMQ: Multimodal mixture-of-quantization tokenization for semantic id generation and user behavioral adaptation},
+author={Xu, Yi and Zhang, Moyu and Li, Chenxuan and Liao, Zhihao and Xing, Haibo and Deng, Hao and Hu, Jinxin and Zhang, Yu and Zeng, Xiaoyi and Zhang, Jing},
+journal={arXiv preprint arXiv:2508.15281},
+year={2025}
+}
+
+@inproceedings{IBQ,
+author    = {Shi, Fengyuan and Luo, Zhuoyan and Ge, Yixiao and Yang, Yujiu and Shan, Ying and Wang, Limin},
+title     = {Scalable Image Tokenization with Index Backpropagation Quantization},
+booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+month     = {October},
+year      = {2025},
+pages     = {16037-16046}
+}
+
+@inproceedings{SASRec,
+title={Self-attentive sequential recommendation},
+author={Kang, Wang-Cheng and McAuley, Julian},
+publisher= {{IEEE} Computer Society},
+booktitle={2018 IEEE international conference on data mining (ICDM)},
+pages={197-206},
+numpages={10},
+year={2018},
+organization={IEEE},
+}
+
+@article{EdVAE,
+title={EdVAE: Mitigating codebook collapse with evidential discrete variational autoencoders},
+author={Baykal, Gulcin and Kandemir, Melih and Unal, Gozde},
+journal={Pattern Recognition},
+volume={156},
+pages={110792},
+year={2024},
+publisher={Elsevier}
+}
+
+@InProceedings{Zhu_2025_ICCV,
+author    = {Zhu, Yongxin and Li, Bocheng and Xin, Yifei and Xia, Zhihua and Xu, Linli},
+title     = {Addressing Representation Collapse in Vector Quantized Models with One Linear Layer},
+booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+month     = {October},
+year      = {2025},
+pages     = {22968-22977}
+}
+
+@ARTICLE{CoLLM,
+author={Zhang, Yang and Feng, Fuli and Zhang, Jizhi and Bao, Keqin and Wang, Qifan and He, Xiangnan},
+journal={IEEE Transactions on Knowledge and Data Engineering}, 
+title={CoLLM: Integrating Collaborative Embeddings Into Large Language Models for Recommendation}, 
+year={2025},
+volume={37},
+number={5},
+pages={2329-2340},
+}
+
+@inproceedings{BinLLM,
+title = "Text-like Encoding of Collaborative Information in Large Language Models for Recommendation",
+author = "Zhang, Yang  and
+  Bao, Keqin  and
+  Yan, Ming  and
+  Wang, Wenjie  and
+  Feng, Fuli  and
+  He, Xiangnan",
+booktitle = "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+month = aug,
+year = "2024",
+address = "Bangkok, Thailand",
+publisher = "Association for Computational Linguistics",
+pages = "9181-9191",
+}
+
+@InProceedings{RQ-VAE,
+author    = {Lee, Doyup and Kim, Chiheon and Kim, Saehoon and Cho, Minsu and Han, Wook-Shin},
+title     = {Autoregressive Image Generation Using Residual Quantization},
+booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+month     = {June},
+year      = {2022},
+pages     = {11523-11532}
+}
+
+@article{T5,
+  title={Exploring the limits of transfer learning with a unified text-to-text transformer},
+  author={Raffel, Colin and Shazeer, Noam and Roberts, Adam and Lee, Katherine and Narang, Sharan and Matena, Michael and Zhou, Yanqi and Li, Wei and Liu, Peter J},
+  journal={Journal of machine learning research},
+  volume={21},
+  number={140},
+  pages={1-67},
+  year={2020}
+}
+
+@inproceedings{Caser,
+author = {Tang, Jiaxi and Wang, Ke},
+title = {Personalized Top-N Sequential Recommendation via Convolutional Sequence Embedding},
+year = {2018},
+isbn = {9781450355810},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+booktitle = {Proceedings of the Eleventh ACM International Conference on Web Search and Data Mining},
+pages = {565–573},
+numpages = {9},
+keywords = {sequential prediction, recommender system, convolutional neural networks},
+location = {Marina Del Rey, CA, USA},
+series = {WSDM '18}
+}
+
+@inproceedings{GRU4Rec,
+author = {Hidasi, Bal\'{a}zs and Karatzoglou, Alexandros},
+title = {Recurrent Neural Networks with Top-k Gains for Session-based Recommendations},
+year = {2018},
+isbn = {9781450360142},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+booktitle = {Proceedings of the 27th ACM International Conference on Information and Knowledge Management},
+pages = {843–852},
+numpages = {10},
+keywords = {loss function, ranking, recommender systems, recurrent neural networks, session-based recommendation},
+location = {Torino, Italy},
+series = {CIKM '18}
+}
+
+@inproceedings{BERT4Rec,
+author = {Sun, Fei and Liu, Jun and Wu, Jian and Pei, Changhua and Lin, Xiao and Ou, Wenwu and Jiang, Peng},
+title = {BERT4Rec: Sequential Recommendation with Bidirectional Encoder Representations from Transformer},
+year = {2019},
+isbn = {9781450369763},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+booktitle = {Proceedings of the 28th ACM International Conference on Information and Knowledge Management},
+pages = {1441–1450},
+numpages = {10},
+keywords = {sequential recommendation, cloze, bidirectional sequential model},
+location = {Beijing, China},
+series = {CIKM '19}
+}
+
+@inproceedings{HGN,
+author = {Ma, Chen and Kang, Peng and Liu, Xue},
+title = {Hierarchical Gating Networks for Sequential Recommendation},
+year = {2019},
+isbn = {9781450362016},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+booktitle = {Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery \& Data Mining},
+pages = {825–833},
+numpages = {9},
+keywords = {feature gating, instance gating, item-item product, sequential recommendation},
+location = {Anchorage, AK, USA},
+series = {KDD '19}
+}
+
+@inproceedings{recbole,
+author = {Zhao, Wayne Xin and Mu, Shanlei and Hou, Yupeng and Lin, Zihan and Chen, Yushuo and Pan, Xingyu and Li, Kaiyuan and Lu, Yujie and Wang, Hui and Tian, Changxin and Min, Yingqian and Feng, Zhichao and Fan, Xinyan and Chen, Xu and Wang, Pengfei and Ji, Wendi and Li, Yaliang and Wang, Xiaoling and Wen, Ji-Rong},
+title = {RecBole: Towards a Unified, Comprehensive and Efficient Framework for Recommendation Algorithms},
+year = {2021},
+isbn = {9781450384469},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+booktitle = {Proceedings of the 30th ACM International Conference on Information \& Knowledge Management},
+pages = {4653–4664},
+numpages = {12},
+keywords = {toolkit, recommender system, collaborative filtering},
+location = {Virtual Event, Queensland, Australia},
+series = {CIKM '21}
+}
+
+@article{zhou2025openonerec,
+title={OpenOneRec Technical Report},
+author={Zhou, Guorui and Bao, Honghui and Huang, Jiaming and Deng, Jiaxin and Zhang, Jinghao and She, Junda and Cai, Kuo and Ren, Lejian and Ren, Lu and Luo, Qiang and others},
+journal={arXiv preprint arXiv:2512.24762},
+year={2025}
+}
+
+@inproceedings{P5,
+author = {Geng, Shijie and Liu, Shuchang and Fu, Zuohui and Ge, Yingqiang and Zhang, Yongfeng},
+title = {Recommendation as Language Processing (RLP): A Unified Pretrain, Personalized Prompt \& Predict Paradigm (P5)},
+year = {2022},
+isbn = {9781450392785},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+booktitle = {Proceedings of the 16th ACM Conference on Recommender Systems},
+pages = {299–315},
+numpages = {17},
+keywords = {Language Modeling, Multitask Learning, Natural Language Processing, Personalized Prompt, Recommender Systems, Unified Model},
+location = {Seattle, WA, USA},
+series = {RecSys '22}
+}
+
+@article{BIGRec,
+author = {Bao, Keqin and Zhang, Jizhi and Wang, Wenjie and Zhang, Yang and Yang, Zhengyi and Luo, Yanchen and Chen, Chong and Feng, Fuli and Tian, Qi},
+title = {A Bi-Step Grounding Paradigm for Large Language Models in Recommendation Systems},
+year = {2025},
+issue_date = {December 2025},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {3},
+number = {4},
+journal = {ACM Trans. Recomm. Syst.},
+month = apr,
+articleno = {53},
+numpages = {27},
+keywords = {Large language models, grounding, sequential recommendation}
+}
+
+@article{qwen3,
+title={Qwen3 technical report},
+author={Yang, An and Li, Anfeng and Yang, Baosong and Zhang, Beichen and Hui, Binyuan and Zheng, Bo and Yu, Bowen and Gao, Chang and Huang, Chengen and Lv, Chenxu and others},
+journal={arXiv preprint arXiv:2505.09388},
+year={2025}
+}
+
+@inproceedings{llara,
+author = {Liao, Jiayi and Li, Sihang and Yang, Zhengyi and Wu, Jiancan and Yuan, Yancheng and Wang, Xiang and He, Xiangnan},
+title = {LLaRA: Large Language-Recommendation Assistant},
+year = {2024},
+isbn = {9798400704314},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+booktitle = {Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+pages = {1785–1795},
+numpages = {11},
+keywords = {curriculum learning, hybrid prompting, large language models, sequential recommendation},
+location = {Washington DC, USA},
+series = {SIGIR '24}
+}
+
+@article{fu2025forge,
+title={Forge: Forming semantic identifiers for generative retrieval in industrial datasets},
+author={Fu, Kairui and Zhang, Tao and Xiao, Shuwen and Wang, Ziyang and Zhang, Xinming and Zhang, Chenchi and Yan, Yuliang and Zheng, Junjun and Li, Yu and Chen, Zhihong and others},
+journal={arXiv preprint arXiv:2509.20904},
+year={2025}
+}
+
+@inproceedings{AdamW,
+author       = {Ilya Loshchilov and
+              Frank Hutter},
+title        = {Decoupled Weight Decay Regularization},
+booktitle    = {7th International Conference on Learning Representations, {ICLR} 2019,
+              New Orleans, LA, USA, May 6-9, 2019},
+publisher    = {OpenReview.net},
+year         = {2019},
+timestamp    = {Thu, 25 Jul 2019 14:26:04 +0200},
+}
+
+@inproceedings{S3-Rec,
+author = {Zhou, Kun and Wang, Hui and Zhao, Wayne Xin and Zhu, Yutao and Wang, Sirui and Zhang, Fuzheng and Wang, Zhongyuan and Wen, Ji-Rong},
+title = {S3-Rec: Self-Supervised Learning for Sequential Recommendation with Mutual Information Maximization},
+year = {2020},
+isbn = {9781450368599},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+booktitle = {Proceedings of the 29th ACM International Conference on Information \& Knowledge Management},
+pages = {1893–1902},
+numpages = {10},
+keywords = {sequential recommendation, self-supervised learning, mutual information maximization},
+location = {Virtual Event, Ireland},
+series = {CIKM '20}
+}
