@@ -64,7 +64,7 @@ class ConstrainedLogitsProcessor(LogitsProcessor):
         self.count = 0
         self.base_model = base_model
         self.eos_token_id = eos_token_id
-        if base_model.lower().find("gpt2") > -1:
+        if base_model and base_model.lower().find("gpt2") > -1:
             self.prefix_index = 4
         else:
             self.prefix_index = 3

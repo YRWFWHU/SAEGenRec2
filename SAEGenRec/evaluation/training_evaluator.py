@@ -29,6 +29,7 @@ class TrainingEvaluator(TrainerCallback):
         k_values: Optional[List[int]] = None,
         batch_size: int = 2,
         category: str = "",
+        tokenizer=None,
     ):
         self.eval_rec_steps = eval_rec_steps
         self.eval_rec_beams = eval_rec_beams
@@ -38,6 +39,24 @@ class TrainingEvaluator(TrainerCallback):
         self.k_values = k_values or [1, 5, 10]
         self.batch_size = batch_size
         self.category = category
+        self._tokenizer = tokenizer  # 由 sft.py 在初始化时注入，避免依赖 callback kwargs
+
+    def on_epoch_end(
+        self,
+        args: TrainingArguments,
+        state: TrainerState,
+        control: TrainerControl,
+        model=None,
+        tokenizer=None,
+        **kwargs,
+    ):
+        if self.eval_rec_steps <= 0:
+            return
+        if model is None:
+            return
+        tok = tokenizer if tokenizer is not None else self._tokenizer
+        logger.info(f"[TrainingEvaluator] Epoch end — running recommendation eval...")
+        self._run_eval(model, tok)
 
     def on_step_end(
         self,
@@ -54,7 +73,8 @@ class TrainingEvaluator(TrainerCallback):
             return
         if model is None:
             return
-        self._run_eval(model, tokenizer)
+        tok = tokenizer if tokenizer is not None else self._tokenizer
+        self._run_eval(model, tok)
 
     def _run_eval(self, model, tokenizer):
         """执行评估并记录指标。"""

@@ -341,7 +341,8 @@ def _sft_jsonl(
     train_path = os.path.join(sft_data_dir, "train.jsonl")
     valid_path = os.path.join(sft_data_dir, "valid.jsonl")
     train_dataset = _load_jsonl(train_path, sample)
-    eval_dataset = _load_jsonl(valid_path)
+    # 限制 eval dataset 大小以避免 tokenization 过慢；eval_rec_samples 控制推荐指标 eval
+    eval_dataset = _load_jsonl(valid_path, sample_n=min(1000, eval_rec_samples * 5))
 
     logger.info(f"Train: {len(train_dataset)}, Eval: {len(eval_dataset)}")
 
@@ -376,6 +377,7 @@ def _sft_jsonl(
                 test_csv=eval_test_csv,
                 info_file=eval_info_file,
                 category=category,
+                tokenizer=tokenizer,
             )
             callbacks.append(evaluator)
             logger.info(f"TrainingEvaluator callback registered (every {eval_rec_steps_int} steps).")
